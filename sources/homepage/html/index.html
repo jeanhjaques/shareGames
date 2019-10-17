@@ -1,0 +1,101 @@
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+   		<link href="../styles/homepage.css" rel="stylesheet">
+    	<script type="text/javascript" src="../scripts/homepage.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Bree+Serif&amp;display=swap" rel="stylesheet">
+		<title>ShareGames</title>
+	</head>
+	<body>
+		<article>
+			<h1 class="article">Share Games[logo]</h1>
+			<h2 class="articles">Cansado de jogar sempre os mesmos jogos?</h2>
+			<p class="article">Entre para a comunidade Share Games agora mesmo e troque seus jogos por outros de seu interesse. Aqui você encontra
+				o melhor do mundo dos games a uma troca de distancia. Venha viver essa experiência!
+			</p>
+
+			<div class="login">
+				<form method="post" action="">
+					</br>
+
+					<h1>Entre com sua conta</h1>
+					<img class="joystick" src="../img/joystick2.png" alt="some text">
+
+					</br>
+
+					<label for="email_login"></label>
+					<input name="email_login" required="required" type="email" placeholder="Email">
+					</br>
+
+					<label for="senha_login"></label>
+					<input name="senha_login" required="required" type="password" placeholder="Senha">
+
+					</br>
+					<input type="checkbox" name="manterlogado" value="">
+					<label for="manterlogado">Manter-me logado</label>
+
+					</br>
+
+					<input type="submit" value="Entrar">
+
+					</form>
+
+				<p class="link">Ainda não tem conta?<button onclick="mudarestado('login','cadastro');"><strong>Criar nova conta</strong></button></p>
+
+			</div>
+
+			<div class="cadastro">
+				<form method="post" action="">
+					</br>
+
+					<h1>Criar uma conta</h1>
+					<img class="joystick" src="http://gradweb.facom.ufms.br/~201619060485/shareGames/site/html/joystick2.png" alt="some text">
+
+					</br>
+					<label for="email_cadastro"></label>
+					<input name="email_cadastro" required="required" type="email" placeholder="Email">
+
+					</br>
+					<label for="nome"></label>
+					<input name="nome_cadastro" required="required" type="text" placeholder="Nome">
+
+					</br>
+					<label for="sobrenome"></label>
+					<input name="sobrenome_cadastro" required="required" type="text" placeholder="Seu sobrenome">
+
+					</br>
+					<label for="email_login"></label>
+					<input name="senha_cadastro" required="required" type="password" placeholder="Senha">
+
+					</br>
+
+					<input type="checkbox" name="termoscondicoes" value="">
+					<label for="termoscondicoes">Eu li e aceito os termos</label>
+
+					</br>
+					<input type="submit" value="Cadastrar">
+
+				</form>
+
+				<p class="link">Já possui uma conta?<button onclick="mudarestado('cadastro', 'login');"><strong>Entre com seu email</strong></button></p>
+
+			</div>
+		</article>
+
+		<footer>
+			<nav>
+				<ul>
+					<li><a class="article" href="#">Sobre</a></li>
+					<li><a class="article" href="#">Quem somos</a></li>
+					<li><a class="article" href="#">Contato</a></li>
+				</ul>
+			</nav>
+			<p>Criado e Desenvolvido por Hackers<br>Copyright<br>2019<p>
+		</footer>
+
+	</body>
+</html>
