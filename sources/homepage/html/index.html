@@ -51,9 +51,8 @@
 					<h1>Criar uma conta</h1>
 					<img class="joystick" src="../img/joystick2.png" alt="some text">
 
-					<div class="sobre">
-						<h2>Sobre você</h2>
 						<form method="post" action="">
+							<h2>Sobre você</h2>
 							<br>
 
 							<label for="nome"></label>
@@ -82,16 +81,8 @@
 							<br>
 							<br>
 
-							<input onclick="mudarestado('sobre','endereco');" type="submit" value="Próximo">
-						</form>
+							<h2>Seu Endereço</h2>
 
-						<p class="link">Já possui uma conta?<button onclick="mudarestado('cadastro', 'login');"><strong>Entre com seu email</strong></button></p>
-					</div>
-
-					<div class="endereco">
-						<h2>Seu Endereço</h2>
-
-						<form method="post" action="">
 							<br>
 							<label for="cep"></label>
 							<input id = "cep" name="cep" required="required" type="text" pattern="^\d{5}-\d{3}$" placeholder="CEP">
@@ -106,7 +97,7 @@
 
 							<br>
 							<label for="uf"></label>
-							<input id = "uf" name="cidade" required="required" type="text"  placeholder="UF">
+							<input id = "uf" name="cidade" required="required" type="text"  placeholder="UF" required minlength="2" required maxlength="">
 
 							<br>
 							<label for="bairro"></label>
@@ -134,7 +125,7 @@
 							<input type="submit" value="Cadastrar">
 						</form>
 
-						<p class="link">Já possui uma conta?<button onclick="mudarestado('cadastro', 'login'); mudarestado('sobre', 'endereco');"><strong>Entre com seu email</strong></button></p>
+						<p class="link">Já possui uma conta?<button onclick="mudarestado('cadastro', 'login');"><strong>Entre com seu email</strong></button></p>
 					</div>
 				</div>
 		</article>
