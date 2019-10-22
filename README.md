@@ -8,7 +8,8 @@ Requisitos basicos para a execução:
 Passo a passo para a execução:
 i) Usar sua ferramenta MySql e criar um database com o nome 'share';
 ii) Executar o script sql disponível na pasta /sources/lib e popular o projeto;*
-iii) Iniciar a naveção no site através da view presente em /sources/app/views/homepage.php
+ii) Configurar o database com seus dados atraves do arquivo Conexao.php disponivel na pasta /sources/app/models;
+iii) Iniciar a naveção no site através da view presente em /sources/app/views/homepage.php;
 
 O que já está possível?
 i) Efetuar login (De forma prematura, apenas é checado se existe o usuario e senha no database);
