@@ -25,7 +25,7 @@
 					<br>
 
 					<h1>Entre com sua conta</h1>
-					<img class="joystick" src="/sources/public/joystick2.png" alt="some text">
+					<img class="joystick" src="../../public/joystick2.png" alt="some text">
 
 					<?php
 						if(isset($_SESSION['loginErro'])){
@@ -60,7 +60,7 @@
 
 			<div class="cadastro">
 					<h1>Criar uma conta</h1>
-					<img class="joystick" src="/sources/public/joystick2.png" alt="some text">
+					<img class="joystick" src="../../public/joystick2.png" alt="some text">
 
 					<form method="post" action="../controllers/PostsController.php">
 						<h2>Sobre você</h2>
