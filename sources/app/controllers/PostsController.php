@@ -11,18 +11,17 @@
 		$usuarioDAO->logar($email, $senha);
 
 		if($usuarioDAO->logar($email, $senha)){
-			header('Location: /sources/app/views/MinhaConta.php');
+			header('Location: ../views/MinhaConta.php');
 		}
 
 		else{
 			$_SESSION['loginErro'] = "<h1>Acesso Negado</h1>";
-			header('Location: /sources/app/views/Homepage.php');
+			header('Location: ../views/Homepage.php');
 
 		}
 	}
     else{
-		$_SESSION['loginErro'] = "<h1>Acesso Negado</h1>";
-		header('Location: /sources/app/views/Homepage.php');
+		header('Location: ../views/Homepage.php');
     }
 
     $valido = false;
