@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Bree+Serif&amp;display=swap" rel="stylesheet">
+	<title>Menus</title>
+	<link rel="stylesheet" type="text/css" href="usuarioInicio.css">
+	<script type="text/javascript" src="usuarioInicio.js"></script>
+</head>
+<body>
+
+	<header>
+        <nav>
+			<ul> 
+				<li><a href="#">Nome do Usuário</a></li>
+			    <li><a href="#"></a></li> 
+			    <li><a href="#">Configurações</a> 
+			      <ul class ="sub-menu"> 
+			        <li><a href="usuarioPerfil.html">Seu perfil</a></li> 
+			        <li><a href="#">Ajuda</a></li> 
+			        <li><a href="#">Sair</a></li>  
+			      </ul> 
+			    </li> 
+			</ul>
+			<img class="img-perfil" src="perfil.jpg" alt="foto do perfil">
+        </nav>
+    </header>
+
+    <article>
+		<button class="menu-principal" onclick="mudarCorButtonsMenu('menu-principal',0); exibirMenuPrincipal('opcao-1', 'opcao-2','opcao-3','opcao-4')" style="color: red">Loja</button></ul>
+		<button class="menu-principal" onclick="mudarCorButtonsMenu('menu-principal',1); exibirMenuPrincipal('opcao-2','opcao-1', 'opcao-3','opcao-4')">Biblioteca</button></ul>
+		<button class="menu-principal" onclick="mudarCorButtonsMenu('menu-principal',2); exibirMenuPrincipal('opcao-3','opcao-1', 'opcao-2','opcao-4')">Desejados</button></ul>
+		<button class="menu-principal" onclick="mudarCorButtonsMenu('menu-principal',3); exibirMenuPrincipal('opcao-4','opcao-1', 'opcao-2','opcao-3')">Conversas</button></ul>
+
+		<div class = "opcao-1"> 
+			<li class = "item-loja"> 
+				<h2> Jogos Disponíveis </h2>
+
+			<div class="pesquisar-jogo">
+					<form method="post" action="">
+
+						<label for="pesquisa-jogo"></label>
+						<input id="pesquisa-jogo" name="pesquisa-jogo" required="required" type="search" placeholder="Buscar Jogo">
+						<br>
+
+						<input type="submit" value="Buscar">
+
+					</form>
+
+
+			</div>
+				<ul><figure><img class = "img-capa" src="007.jpg"><figcaption><h3>007 Nightfire</h3>
+					<br>Cidade: Campo Grande
+					<br>Categoria: Ação
+					<br>Estado de uso: 1 ano
+					<br><button>Trocar</button>
+
+
+
+				</figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="4fantastico.jpg"><figcaption><h3>Quarteto Fantástico</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="bully.jpg"><figcaption><h3>Bully</figcaption></h3></figure></ul>
+				<ul><figure><img class = "img-capa" src="dbzbudokai.jpg"><figcaption><h3>Dragon Ball Z: Budokai Tenkaichi 3</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="defjam.jpg"><figcaption><h3>DEF Jam Fight For NY</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="deltablack.jpg"><figcaption><h3>Delta Force: Black Hawk Down</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="devilmaycry.jpg"><figcaption><h3>Devil May Cry</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="f12006.jpg"><figcaption><h3>Fórmula 1 2006</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="fifa14.jpg"><figcaption><h3>FIFA 14</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="granturismo4.jpg"><figcaption><h3>Gran Turismo 4</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="gtalibertycity.png"><figcaption><h3>GTA Liberty City Stories</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="gtasatropa.jpg"><figcaption><h3>GTA San Andreas: Tropa de Elite</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="gtavc.jpg"><figcaption><h3>GTA Vice City Stories</h3></figcaption></figure></ul>
+			
+			</li>
+
+		</div>
+
+		<div class = "opcao-2"> 
+			<button onclick="mudarEstadoAndOcultBtn('cadastrar-jogo', 'btn-cadastro');" class="btn-cadastro">Cadastrar novo jogo</button>
+
+			<div class="cadastrar-jogo">
+				<form method="post" action="">
+
+					<h2>Insira os dados do  novo jogo</h2>
+
+					<p>Nome:</p>
+					<label for="nome-jogo"></label>
+					<input id="nome-jogo" name="nome-jogo" required="required" type="text" placeholder="Nome do jogo">
+
+					<p>Tempo de Uso:</p>
+					<label for="estado-jogo"></label>
+					<input id="estado-jogo" name="estado-jogo" required="required" type="number" accept=".jpg,.png" placeholder="Tempo de uso(Anos)" >
+
+					<p>Categoria:</p>
+					<select name="categoria-jogo">
+						<option value="Ação">Ação</option>
+						<option value="Aventura">Aventura</option>
+						<option value="Esporte">Esporte</option>
+						<option value="RPG">RPG</option>
+					</select><br>
+
+					<p>Imagem da Capa:</p>
+					<label for="capa-jogo"></label>
+					<input class ="capa-jogo" id="capa-jogo" name="capa-jogo" required="required" type="file" placeholder="Capa do jogo"><br>
+
+					<input type="submit" value="Cadastrar Jogo"><br>
+
+					</form>
+
+				<button class="btn-ocultar" onclick="mudarEstadoAndExibeBtn('cadastrar-jogo', 'btn-cadastro');"><strong>Ocultar</strong></button>
+
+
+			</div>
+
+			<li class = "item-loja"> 
+				<h2> Jogos Cadastrados na Sua Biblioteca</h2>
+				<ul><figure><img class = "img-capa" src="007.jpg"><figcaption><h3>007 Nightfire</h3>
+					<br>Categoria: Ação
+					<br>Estado de uso: 1 ano
+					<br><button>Disponibilizar</button>
+
+
+
+				</figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="4fantastico.jpg"><figcaption><h3>Quarteto Fantástico</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="bully.jpg"><figcaption><h3>Bully</figcaption></h3></figure></ul>
+				<ul><figure><img class = "img-capa" src="dbzbudokai.jpg"><figcaption><h3>Dragon Ball Z: Budokai Tenkaichi 3</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="defjam.jpg"><figcaption><h3>DEF Jam Fight For NY</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="deltablack.jpg"><figcaption><h3>Delta Force: Black Hawk Down</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="devilmaycry.jpg"><figcaption><h3>Devil May Cry</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="f12006.jpg"><figcaption><h3>Fórmula 1 2006</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="fifa14.jpg"><figcaption><h3>FIFA 14</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="granturismo4.jpg"><figcaption><h3>Gran Turismo 4</h3></figcaption></figure></ul>
+
+			</li>
+
+		</div>
+
+		<div class = "opcao-3"> 
+			<li class = "item-loja"> 
+				<h2> Jogos que você deseja </h2>
+				<ul><figure><img class = "img-capa" src="007.jpg"><figcaption><h3>007 Nightfire</h3>
+					<br>Cidade: Campo Grande
+					<br>Categoria: Ação
+					<br>Estado de uso: 1 ano
+					<br><button>Trocar</button>
+
+
+
+				</figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="4fantastico.jpg"><figcaption><h3>Quarteto Fantástico</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="guitarhero.jpg"><figcaption><h3>Guitar Hero</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="hitmanbm.jpg"><figcaption><h3>Hitman: Blood Money</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="killswitch.jpg"><figcaption><h3>Kill Switch</h3></figcaption></figure></ul>
+				<ul><figure><img class = "img-capa" src="yugiohgx.jpg"><figcaption><h3>Yu Gi Oh GX: Tag Force</h3></figcaption></figure></ul>
+			</li>
+
+		</div>
+
+		<div class = "opcao-4">
+			<h2>Suas Conversas</h2>
+			<p>Aqui futuramente você poderá fazer suas negociações</p>
+		</div>
+
+	</article>
+
+
+	<footer>
+			<button>Sobre</button>
+			<button>Quem somos</button>
+			<button>Contato</button>
+			<p>Criado e Desenvolvido por Hackers<br>Copyright<br>2019<p>
+	</footer>
+
+</body>
+</html>
