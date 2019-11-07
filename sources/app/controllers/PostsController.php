@@ -11,12 +11,12 @@
 		$usuarioDAO->logar($email, $senha);
 
 		if($usuarioDAO->logar($email, $senha)){
-			header('Location: ../views/login.php');
+			header('Location: ../views/usuarioInicio.html');
 		}
 
 		else{
 			$_SESSION['loginErro'] = "<h1>Acesso Negado</h1>";
-			header('Location: ../views/usuarioInicio.html');
+			header('Location: ../views/login.php');
 
 		}
 	}
