@@ -16,7 +16,7 @@
 
 		else{
 			$_SESSION['loginErro'] = "<h1>Acesso Negado</h1>";
-			header('Location: ../views/usuarioInicio.php');
+			header('Location: ../views/usuarioInicio.html');
 
 		}
 	}
