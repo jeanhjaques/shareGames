@@ -155,11 +155,11 @@
         }
 
         public function getId(){
-            return $this -> complemento;
+            return $this -> id;
         }
 
         public function setId($id){
-            $this -> complemento = $id;
+            $this -> id = $id;
         }
     }
 ?>
