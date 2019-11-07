@@ -14,5 +14,7 @@ iii) Iniciar a naveção no site através da view presente em /sources/app/views
 O que já está possível?
 i) Efetuar login (De forma prematura, apenas é checado se existe o usuario e senha no database);
 ii) Cadastrar um novo usuario;
+iii) Navegar pelo visual da tela inicial de usuario
+iv) Complementando a alinia anterior, é possivel navegar pela página de configuração de perfil
 
 *O script sql presente no projeto foi criado somente para testes, por esse motivo não nos preocupamos ainda com as restrições, tipos de atributos ou até mesmo com o tamanho dos varchars.
