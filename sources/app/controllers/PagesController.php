@@ -1,12 +1,12 @@
 <?php
 	class PagesController{
 		//nao esta funcionando ainda	
-		function homepage(){
-			header('Location: /sources3/app/views/Homepage.php');
+		function login(){
+			header('Location: /sources3/app/views/login.php');
 		}
 		
-		function minhaconta(){
-			include 'app/views/MinhaConta.php';
+		function usuarioInicio(){
+			include 'app/views/usuarioInicio.php';
 		}
 
 	}
