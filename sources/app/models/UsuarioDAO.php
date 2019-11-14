@@ -45,7 +45,7 @@
         }
 
         public function update(Usuario $usuario){
-            $sql = 'UPDATE usuario SET nome = $usuario->getNome(), sobrenome = ?, dataNascimento = ?, cpf = ?,
+            $sql = 'UPDATE usuario SET nome = ?, sobrenome = ?, dataNascimento = ?, cpf = ?,
             email = ?, senha = ?, cep = ?, pais = ?, cidade = ?, estado = ?, bairro = ?, rua = ?, numero = ?,
             complemento = ? WHERE id = ?';
 
