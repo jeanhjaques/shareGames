@@ -3,7 +3,7 @@ body{
 	margin: 0;
 	padding: 0;
 	font-family: 'Bree Serif', serif;
-	background-color: rgb(0, 77, 192);
+	background-color: white;
 }
 header .img-perfil{
 	padding: 0px;
@@ -87,12 +87,22 @@ header nav li:hover ul { display: block; }
 * html ul li a { height: 1%; }
 /* End */
 
+.retorno{
+	text-decoration: none;
+    color: white;
+    margin: 15px;
+    padding: 2px;
+    background-color: red;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 1px grey;
+}
+
 article .menu-principal{
 	font-family: 'Bree Serif', serif;
 	background-color: transparent;
 	border: none;
 	font-size: 30px;
-	color: white;
+	color: rgb(0, 77, 192);
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -374,7 +384,7 @@ footer button{
 }
 
 footer button:hover{
-	color: red;
+	color: rgb(252, 5, 5);
 }
 footer button:focus{
 	color: red;
@@ -388,7 +398,7 @@ footer button:focus{
 	}
 	header nav ul li a{ 
 		font-size: 40px;
-		margin: 5px;
+        margin: 5px;
 	}
 
 	header .img-perfil{
@@ -417,41 +427,6 @@ footer button:focus{
 	article{
 		margin-left: 0px;
 		margin-right: 0px;
-	}
-	article .img-capa{
-		width: 245.190px;
-		height: 345.840px;
-		margin-bottom: 0;
-		margin-top: 0;
-		box-shadow: 0px 0px 2px 2px;
-		border-radius: 2px;
-	}
-
-	article figure{
-    	font-size: 25px;
-	}
-
-	article figcaption{
-		text-align: left;
-		float: right;
-		width: 170px;
-		color: white;
-		padding: 6px;
-		margin: 0;
-	}
-
-	article figcaption button{
-		margin-top: 15px;
-		margin-right: 25%;
-		margin-left: 25%;
-		font-size: 30px;
-	}
-
-	article .opcao-2 figcaption button{
-		margin-top: 60px;
-		margin-right: 5%;
-		margin-left: 5%;
-		font-size: 22px;
 	}
 
 	footer button{
@@ -482,6 +457,10 @@ footer button:focus{
 	}
 
 	article .btn-cadastro{
+		font-size: 40px;
+    }
+    
+    .retorno{
 		font-size: 40px;
 	}
 }

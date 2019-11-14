@@ -5,7 +5,7 @@ function mudarCorButtonsMenu(classOfButtons, numButtom){
 			colorValue[i].style.color = "red";
 		}
 		else{
-			colorValue[i].style.color = "rgb(0, 77, 192)";
+			colorValue[i].style.color = "white";
 		}
 	}
 }

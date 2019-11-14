@@ -8,19 +8,28 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
    		<link href="login.css" rel="stylesheet">
-    		<script type="text/javascript" src="login.js"></script>
+    	<script type="text/javascript" src="login.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Bree+Serif&amp;display=swap" rel="stylesheet">
 		<title>ShareGames</title>
 	</head>
 	<body>
-		<article>
-			<h1 class="article">Share Games[logo]</h1>
-			<h2 class="articles">Cansado de jogar sempre os mesmos jogos?</h2>
-			<p class="article">Entre para a comunidade Share Games agora mesmo e troque seus jogos por outros de seu interesse. Aqui você encontra
-				o melhor do mundo dos games a uma troca de distancia. Venha viver essa experiência!
-			</p>
+		<header>
+			<nav>
+				<ul> 
+					<li><a href="#login">Login</a></li> 
+					<li><a href="#cadastro" class="cadastre-se" onclick="mudarestado('login','cadastro');">Cadastre-se</a></li>
+				</ul>
+			</nav>
+		</header>
 
-			<div class="login">
+		<article>
+			<div class="anuncio">
+				<img class="example" src="../../public/logo1.png" alt="some text">
+				<h2>Troque experiências, troque aventuras! Uma nova forma de jogar algo novo</h2>
+				<h2>Troque jogos</h2>
+			</div>
+
+			<div class="login" id="login">
 				<form method="post" action="../controllers/PostsController.php">
 					<br>
 
@@ -58,12 +67,12 @@
 
 			</div>
 
-			<div class="cadastro">
+			<div class="cadastro" id="cadastro">
 					<h1>Criar uma conta</h1>
 					<img class="joystick" src="../../public/joystick2.png" alt="some text">
 
 					<form method="post" action="../controllers/PostsController.php">
-						<h2>Sobre você</h2>
+						<h1>Sobre você</h1>
 						<br>
 
 						<label for="nome_cadastro"></label>
@@ -92,7 +101,7 @@
 						<br>
 						<br>
 
-						<h2>Seu Endereço</h2>
+						<h1>Seu Endereço</h1>
 
 						<br>
 						<label for="cep"></label>
