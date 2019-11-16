@@ -1,14 +1,15 @@
 <?php 
     //CRUD da classe
-    //TO DO corrigir
     require_once 'Conexao.php';
     require_once 'Jogo.php';
-    class UsuarioDAO{
+    class JogoDAO{
 
         public function create(Jogo $jogo){
             $sql = 'INSERT INTO jogo (nome, capa, anosUso, categoria, idUsuario) VALUES(?, ?, ?, ?, ?)';
             
             $stmt = Conexao::getConnect()->prepare($sql);
+
+            $capa = 'capa';
 
             $stmt->bindValue(1, $jogo->getNome());
             $stmt->bindValue(2, $jogo->getCapa());

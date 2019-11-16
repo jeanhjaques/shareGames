@@ -1,5 +1,5 @@
 <?php
-  //controla os POSTs
+  //controla o cadastro de usuarios
 	session_start();
 	require_once '../models/Usuario.php';
 	require_once '../models/UsuarioDAO.php';
@@ -28,5 +28,6 @@
     $novoUsuario = new Usuario($nome, $sobrenome, $dataNascimento, $cpf, $email, $senha, $cep, $pais, $cidade, $estado, $bairro, $rua, $numero, $complemento);
     $novoUsuarioDAO = new UsuarioDAO();
     $novoUsuarioDAO->create($novoUsuario);
+    header('Location: ../views/login.php');
   }
 ?>

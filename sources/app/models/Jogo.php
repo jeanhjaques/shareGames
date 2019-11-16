@@ -2,7 +2,7 @@
     class Jogo{
         private $nome;
         private $capa;
-        private $anosUso
+        private $anosUso;
         private $categoria;
         private $idUsuario;
         private $idJogo;
@@ -33,7 +33,7 @@
         }
 
         public function getAnosUso(){
-            return $this -> $anosUso;
+            return $this -> anosUso;
         }
 
         public function setAnosUso($anosUso){
@@ -41,7 +41,7 @@
         }
 
         public function getCategoria(){
-            return $this -> $categoria;
+            return $this -> categoria;
         }
 
         public function setCategoria($categoria){
@@ -55,12 +55,12 @@
         public function setIdJogo($idJogo){
             $this -> idJogo = $idJogo;
         }
-        
+
         public function getIdUsuario(){
             return $this -> idUsuario;
         }
 
-        public function setIdUsuario($idJogo){
+        public function setIdUsuario($idUsuario){
             $this -> idUsuario = $idUsuario;
         }
     }

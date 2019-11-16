@@ -69,18 +69,17 @@
 					<label for="nome-jogo"></label>
 					<input id="nome-jogo" name="nome-jogo" required="required" type="text" placeholder="Nome do jogo">
 					<p>Tempo de Uso:</p>
-					<label for="estado-jogo"></label>
-					<input id="estado-jogo" name="estado-jogo" required="required" type="number" accept=".jpg,.png" placeholder="Tempo de uso(Anos)" >
+					<label for="anosUso-jogo"></label>
+					<input id="anosUso-jogo" name="anosUso-jogo" required="required" type="number" placeholder="Tempo de uso(Anos)" >
 					<p>Categoria:</p>
-					<select name="categoria-jogo">
-						<option value="Ação">Ação</option>
-						<option value="Aventura">Aventura</option>
-						<option value="Esporte">Esporte</option>
-						<option value="RPG">RPG</option>
-					</select><br>
+					<p><input type="radio" id = "categoria-jogo" required="required" name="categoria-jogo" value="Ação"> Ação
+					<input type="radio" id = "categoria-jogo" required="required" name="categoria-jogo" value="Aventura"> Aventura
+					<input type="radio" id = "categoria-jogo" required="required" name="categoria-jogo" value="Esporte"> Esporte
+					<input type="radio" id = "categoria-jogo" required="required" name="categoria-jogo" value="RPG"> RPG
+					<input type="radio" id = "categoria-jogo" required="required" name="categoria-jogo" value="outra">Outra</p>
 					<p>Imagem da Capa:</p>
 					<label for="capa-jogo"></label>
-					<input class ="capa-jogo" id="capa-jogo" name="capa-jogo" required="required" type="file" placeholder="Capa do jogo"><br>
+					<input class ="capa-jogo" id="capa-jogo" name="capa-jogo" required="required" type="file" accept=".jpg,.png" placeholder="Capa do jogo"><br>
 					<input type="submit" value="Cadastrar Jogo"><br>
 					</form>
 				<button class="btn-ocultar" onclick="mudarEstadoAndExibeBtn('cadastrar-jogo', 'btn-cadastro');"><strong>Ocultar</strong></button>

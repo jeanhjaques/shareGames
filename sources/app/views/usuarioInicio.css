@@ -169,11 +169,15 @@ article .opcao-2 .btn-ocultar:focus{
 }
 
 label{
-    font-size: 18px;
+    font-size: 90%;
     margin-top: 0;
 }
 
-input{
+form p{
+	color: white;
+}
+
+input[type=text], input[type=number], input[type=file], input[type=search]{
     font-family: 'Bree Serif', serif;
     font-size: 90%;
     padding: 6px;
@@ -185,22 +189,15 @@ input{
     width: 275px;
     margin-bottom: 0px;
     box-shadow: 0px 0px 2px 1px grey;
-    margin-top: 0;
+	margin-top: 0;
+	background-color: white;
 }
 
-select{
+input[type=radio]{
 	font-family: 'Bree Serif', serif;
-    font-size: 90%;
-    padding: 6px;
-    outline: none;
-    align-items: left;
+	font-size: 100px;
+	align-items: left;
     text-align: left;
-    border-radius: 6px;
-    border: 1px solid  rgb(0, 77, 192);
-    width: 291px;
-    margin-bottom: 0px;
-    box-shadow: 0px 0px 2px 1px grey;
-    margin-top: 0;
 }
 
 option{
@@ -225,6 +222,7 @@ input[type = checkbox]{
 }
 
 input[type = submit]{
+	font-size: 100%;
     background-color:  red;
     color: white;
     cursor: pointer;
@@ -462,9 +460,17 @@ footer button:focus{
 		font-size: 35px;
 	}
 
-	input{
+	input[type=text], input[type=number], input[type=file], input[type=search]{
 		font-size: 50px;
 		width: 600px;
+	}
+
+	input[type=radio]{
+		font-size: 50px;
+	}
+
+	input[type = submit]{
+		font-size: 50px;
 	}
 
 	select{

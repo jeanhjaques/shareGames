@@ -44,6 +44,24 @@
             }
         }
 
+        public function readByCPF($cpf){
+            $sql = 'SELECT * FROM usuario WHERE cpf = ?';
+
+            $stmt = Conexao::getConnect()->prepare($sql);
+           
+            $stmt->bindValue(1, $cpf);
+            
+            $stmt->execute();
+
+            if($stmt->rowCount()>0){
+                $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC); //retorna um array com todos os registros
+                return $resultado;
+            }
+            else{
+                 return []; // retorna um array vazio caso não tenha nenhum item
+            }
+        }
+
         public function update(Usuario $usuario){
             $sql = 'UPDATE usuario SET nome = ?, sobrenome = ?, dataNascimento = ?, cpf = ?,
             email = ?, senha = ?, cep = ?, pais = ?, cidade = ?, estado = ?, bairro = ?, rua = ?, numero = ?,
