@@ -6,7 +6,7 @@
     class UsuarioDAO{
 
         public function create(Jogo $jogo){
-            $sql = 'INSERT INTO jogo (nome, capa, anosUso, categoria) VALUES(?, ?, ?, ?)';
+            $sql = 'INSERT INTO jogo (nome, capa, anosUso, categoria, idUsuario) VALUES(?, ?, ?, ?, ?)';
             
             $stmt = Conexao::getConnect()->prepare($sql);
 
@@ -14,7 +14,7 @@
             $stmt->bindValue(2, $jogo->getCapa());
             $stmt->bindValue(3, $jogo->getAnosUso());
             $stmt->bindValue(4, $jogo->getCategoria());
-
+            $stmt->bindValue(5, $jogo->getIdUsuario());
             $stmt->execute();
         }
 
@@ -35,7 +35,7 @@
         }
 
         public function update(Jogo $jogo){
-            $sql = 'UPDATE jogo SET nome = ?, capa = ?, anosUso = ?, categoria = ? WHERE codigoJogo = ?';
+            $sql = 'UPDATE jogo SET nome = ?, capa = ?, anosUso = ?, categoria = ? WHERE idJogo = ?';
 
             $stmt = Conexao::getConnect()->prepare($sql);
 
@@ -43,16 +43,17 @@
             $stmt->bindValue(2, $jogo->getCapa());
             $stmt->bindValue(3, $jogo->getAnosUso());
             $stmt->bindValue(4, $jogo->getCategoria());
-            $stmt->bindValue(5, $jogo->getCodigoJogo());
+            $stmt->bindValue(5, $jogo->getIdUsuario());
+            $stmt->bindValue(6, $jogo->getIdJogo());
             $stmt->execute();
         }
 
-        public function delete($codigoJogo){
-            $sql = 'DELETE FROM jogo WHERE id = $id';
+        public function delete($idJogo){
+            $sql = 'DELETE FROM jogo WHERE idJogo = $id';
 
             $stmt = Conexao::getConnect()->prepare($sql);
 
-            $stmt->bindValue(1, $codigoJogo);
+            $stmt->bindValue(1, $idJogo);
 
             $stmt->execute();
         }
