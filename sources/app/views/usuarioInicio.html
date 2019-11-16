@@ -36,7 +36,7 @@
 				<h2> Jogos Disponíveis </h2>
 
 			<div class="pesquisar-jogo">
-					<form method="post" action="">
+					<form method="post" action="../controllers/pesquisaJogosController.php">
 
 						<label for="pesquisa-jogo"></label>
 						<input id="pesquisa-jogo" name="pesquisa-jogo" required="required" type="search" placeholder="Buscar Jogo">
@@ -78,7 +78,7 @@
 			<button onclick="mudarEstadoAndOcultBtn('cadastrar-jogo', 'btn-cadastro');" class="btn-cadastro">Cadastrar novo jogo</button>
 
 			<div class="cadastrar-jogo">
-				<form method="post" action="">
+				<form method="post" action="../controllers/cadastroJogoController.php">
 
 					<h2>Insira os dados do  novo jogo</h2>
 
