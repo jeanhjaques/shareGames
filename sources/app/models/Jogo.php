@@ -4,14 +4,14 @@
         private $capa;
         private $anosUso
         private $categoria;
-        private $codigoJogo;
+        private $idJogo;
 
-        public function __construct($nome, $capa, $anosUso, $categoria, $codigoJogo){
+        public function __construct($nome, $capa, $anosUso, $categoria, $idJogo){
             $this->nome = $nome;
             $this->capa = $capa;
             $this->anosUso = $anosUso;
             $this->categoria = $categoria
-            $this->codigoJogo = NULL;    
+            $this->idJogo = NULL;    
         }
 
         public function getNome(){
@@ -46,12 +46,12 @@
             $this -> categoria = $categoria;
         }
 
-        public function getCodigoJogo(){
-            return $this -> codigoJogo;
+        public function getIdJogo(){
+            return $this -> idJogo;
         }
 
-        public function setCodigoJogo($CodigoJogo){
-            $this -> categoria = $CodigoJogo;
+        public function setIdJogo($idJogo){
+            $this -> categoria = $idJogo;
         }
     }
 ?>
