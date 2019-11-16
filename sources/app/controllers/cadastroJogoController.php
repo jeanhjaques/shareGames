@@ -16,7 +16,9 @@
     $categoria = $_POST['categoria-jogo'];
     $capa = $_POST['capa-jogo'];
 
-    $novoJogo = new Jogo($nome, $capa, $anosUso, $categoria, 1);
+	  //aqui o certo seria chamar o metodo cadastrarJogo() da classe usuario, com isso ele já recuperaria o ID
+		//cadastrarJogo($jogo);
+    $novoJogo = new Jogo($nome, $capa, $anosUso, $categoria, 1); // o 1 aqui representa um valor fixo para IDUsuario(deverá ser substituido pelo id do usuario responsavel)
     $novoJogoDAO = new JogoDAO();
     $novoJogoDAO->create($novoJogo);
     header('Location: ../views/usuarioInicio.php');
