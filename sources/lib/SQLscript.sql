@@ -5,7 +5,7 @@ CREATE TABLE usuario(
     dataNascimento VARCHAR(10) NOT NULL,
     email VARCHAR(40) NOT NULL,
     senha VARCHAR(16) NOT NULL,
-    cep VARCHAR(6),
+    cep VARCHAR(9),
     pais VARCHAR(40),
     estado VARCHAR(40),
     cidade VARCHAR(40),
