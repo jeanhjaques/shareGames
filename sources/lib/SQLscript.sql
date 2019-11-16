@@ -1,6 +1,6 @@
 CREATE TABLE usuario(
-	nome VARCHAR(60) NOT NULL,
-	sobrenome VARCHAR(30) NOT NULL,
+    nome VARCHAR(60) NOT NULL,
+    sobrenome VARCHAR(30) NOT NULL,
     cpf VARCHAR(14) UNIQUE NOT NULL,
     dataNascimento VARCHAR(10) NOT NULL,
     email VARCHAR(40) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE usuario(
 );
 
 CREATE TABLE jogo(
-	nome VARCHAR(40) NOT NULL,
+    nome VARCHAR(40) NOT NULL,
     capa VARCHAR(100) NOT NULL,
     anosUso INTEGER,
     categoria VARCHAR(20) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE jogo(
 );
 
 CREATE TABLE deseja(
-	idJogo INTEGER NOT NULL,
+    idJogo INTEGER NOT NULL,
     idUsuario INTEGER NOT NULL,
     FOREIGN KEY(idJogo) REFERENCES jogo(idJogo),
     FOREIGN KEY(idUsuario) REFERENCES usuario(idUsuario)
