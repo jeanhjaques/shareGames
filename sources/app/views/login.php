@@ -71,7 +71,7 @@
 					<h1>Criar uma conta</h1>
 					<img class="joystick" src="../../public/joystick2.png" alt="some text">
 
-					<form method="post" action="../controllers/cadastroController.php">
+					<form method="post" action="../controllers/cadastroUsuarioController.php">
 						<h1>Sobre você</h1>
 						<br>
 
