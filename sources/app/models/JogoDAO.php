@@ -9,8 +9,6 @@
             
             $stmt = Conexao::getConnect()->prepare($sql);
 
-            $capa = 'capa';
-
             $stmt->bindValue(1, $jogo->getNome());
             $stmt->bindValue(2, $jogo->getCapa());
             $stmt->bindValue(3, $jogo->getAnosUso());
