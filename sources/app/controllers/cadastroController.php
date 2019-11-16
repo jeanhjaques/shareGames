@@ -1,4 +1,9 @@
 <?php
+  //controla os POSTs
+	session_start();
+	require_once '../models/Usuario.php';
+	require_once '../models/UsuarioDAO.php';
+
   $valido = false;
 
   //verifica se tudo foi preenchido, se sim $valido recebe true
