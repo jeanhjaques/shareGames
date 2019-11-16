@@ -4,13 +4,15 @@
         private $capa;
         private $anosUso
         private $categoria;
+        private $idUsuario;
         private $idJogo;
 
-        public function __construct($nome, $capa, $anosUso, $categoria, $idJogo){
+        public function __construct($nome, $capa, $anosUso, $categoria, $idUsuario){
             $this->nome = $nome;
             $this->capa = $capa;
             $this->anosUso = $anosUso;
-            $this->categoria = $categoria
+            $this->categoria = $categoria;
+            $this->idUsuario = $idUsuario;
             $this->idJogo = NULL;    
         }
 
@@ -51,7 +53,15 @@
         }
 
         public function setIdJogo($idJogo){
-            $this -> categoria = $idJogo;
+            $this -> idJogo = $idJogo;
+        }
+        
+        public function getIdUsuario(){
+            return $this -> idUsuario;
+        }
+
+        public function setIdUsuario($idJogo){
+            $this -> idUsuario = $idUsuario;
         }
     }
 ?>
