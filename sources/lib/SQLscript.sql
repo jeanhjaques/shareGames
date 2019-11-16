@@ -4,7 +4,7 @@ CREATE TABLE usuario(
     cpf VARCHAR(14) UNIQUE NOT NULL,
     dataNascimento VARCHAR(10) NOT NULL,
     email VARCHAR(40) NOT NULL,
-    senha VARCHAR(16) NOT NULL,
+    senha VARCHAR(10000) NOT NULL,
     cep VARCHAR(9),
     pais VARCHAR(40),
     estado VARCHAR(40),
