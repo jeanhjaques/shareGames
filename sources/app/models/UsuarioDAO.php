@@ -115,5 +115,35 @@
                  return false;
             }
         }
+
+        public function getIdByEmail($email){
+            $sql = 'SELECT idUsuario FROM usuario WHERE email = ?';
+
+            $stmt = Conexao::getConnect()->prepare($sql);
+
+            $stmt->bindValue(1, $email);
+
+            $stmt->execute();
+
+            $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            
+            $id = 0;
+
+            foreach($resultado as $item){
+                $id = $item["idUsuario"];
+            }
+
+            return $id;
+        }
+
+        public function readByEmail($email){
+            $sql = 'SELECT * FROM usuario WHERE email = ?';
+            $stmt = Conexao::getConnect()->prepare($sql);
+            $stmt->bindValue(1, $email);
+            $stmt->execute();
+            $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+            return $resultado;
+        }
     }
 ?>

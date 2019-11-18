@@ -1,7 +1,7 @@
 <?php
   //controla o cadastro dos jogos
 	session_start();
-    require_once '../models/Jogo.php';
+  require_once '../models/Jogo.php';
 	require_once '../models/JogoDAO.php';
 
   $valido = false;
@@ -15,10 +15,9 @@
     $anosUso = $_POST['anosUso-jogo'];
     $categoria = $_POST['categoria-jogo'];
     $capa = $_POST['capa-jogo'];
+    $id = $_SESSION['idUsuario'];
 
-	  //aqui o certo seria chamar o metodo cadastrarJogo() da classe usuario, com isso ele já recuperaria o ID
-		//cadastrarJogo($jogo);
-    $novoJogo = new Jogo($nome, $capa, $anosUso, $categoria, 1); // o 1 aqui representa um valor fixo para IDUsuario(deverá ser substituido pelo id do usuario responsavel)
+    $novoJogo = new Jogo($nome, $capa, $anosUso, $categoria, $id);
     $novoJogoDAO = new JogoDAO();
     $novoJogoDAO->create($novoJogo);
     header('Location: ../views/usuarioInicio.php');

@@ -3,7 +3,7 @@ CREATE TABLE usuario(
     sobrenome VARCHAR(30) NOT NULL,
     cpf VARCHAR(14) UNIQUE NOT NULL,
     dataNascimento VARCHAR(10) NOT NULL,
-    email VARCHAR(40) UNIQUE NOT NULL,
+    email VARCHAR(40) NOT NULL,
     senha VARCHAR(10000) NOT NULL,
     cep VARCHAR(9),
     pais VARCHAR(40),

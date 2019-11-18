@@ -154,19 +154,12 @@
         }
 
         public function getId(){
-            $usuarioDAO = new $usuarioDAO();
-            $dados = $usuarioDAO.readByCPF($this->cpf);
-            return $dados['id'];
+            $usuarioDAO.readByEmail($this->email);
         }
 
         public function setId($id){
             $this -> id = $id;
         }
 
-        public function cadastrarJogo($nome, $capa, $anosUso, $categoria){
-            $jogo = new Jogo($nome, $capa, $anosUso, $categoria, $this->getId());
-            $jogoDAO = new JogoDAO();
-            $jogoDAO.create($jogo);
-        }
     }
 ?>

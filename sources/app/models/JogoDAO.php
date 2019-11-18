@@ -9,6 +9,8 @@
             
             $stmt = Conexao::getConnect()->prepare($sql);
 
+            $capa = 'capa';
+
             $stmt->bindValue(1, $jogo->getNome());
             $stmt->bindValue(2, $jogo->getCapa());
             $stmt->bindValue(3, $jogo->getAnosUso());
@@ -55,6 +57,16 @@
             $stmt->bindValue(1, $idJogo);
 
             $stmt->execute();
+        }
+
+        public function readByIdUsuario($idUsuario){
+            $sql = 'SELECT * FROM jogo WHERE idUsuario = ?';
+            $stmt = Conexao::getConnect()->prepare($sql);
+            $stmt->bindValue(1, $idUsuario);
+            $stmt->execute();
+            $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+            return $resultado;
         }
     }
 ?>
