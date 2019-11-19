@@ -14,7 +14,7 @@
 	<header>
         <nav>
 			<ul> 
-				<li><?php echo $_SESSION['nome'];?></li> 
+				<li><span><?php echo $_SESSION['nome'];?></span></li> 
 			    <li><a href="#">Configurações</a> 
 			      <ul class ="sub-menu"> 
 			        <li><a href="usuarioPerfil.php">Seu perfil</a></li> 
@@ -42,24 +42,15 @@
 						<input type="submit" value="Buscar">
 					</form>
 			</div>
-				<ul><figure><img class = "img-capa" src="007.jpg"><figcaption><h3>007 Nightfire</h3>
-					<br>Cidade: Campo Grande
-					<br>Categoria: Ação
-					<br>Estado de uso: 1 ano
+			<?php foreach($_SESSION['jogosLoja'] as $jogo){
+				echo "<ul><figure><img class = 'img-capa' src='007.jpg'><figcaption><h3>".$jogo['nome']."</h3>
+					<br>Cidade: Indefinida
+					<br>Categoria: ".$jogo['categoria']."
+					<br>Estado de uso: ".$jogo['anosUso']."
 					<br><button>Trocar</button>
-				</figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="4fantastico.jpg"><figcaption><h3>Quarteto Fantástico</h3></figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="bully.jpg"><figcaption><h3>Bully</figcaption></h3></figure></ul>
-				<ul><figure><img class = "img-capa" src="dbzbudokai.jpg"><figcaption><h3>Dragon Ball Z: Budokai Tenkaichi 3</h3></figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="defjam.jpg"><figcaption><h3>DEF Jam Fight For NY</h3></figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="deltablack.jpg"><figcaption><h3>Delta Force: Black Hawk Down</h3></figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="devilmaycry.jpg"><figcaption><h3>Devil May Cry</h3></figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="f12006.jpg"><figcaption><h3>Fórmula 1 2006</h3></figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="fifa14.jpg"><figcaption><h3>FIFA 14</h3></figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="granturismo4.jpg"><figcaption><h3>Gran Turismo 4</h3></figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="gtalibertycity.png"><figcaption><h3>GTA Liberty City Stories</h3></figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="gtasatropa.jpg"><figcaption><h3>GTA San Andreas: Tropa de Elite</h3></figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="gtavc.jpg"><figcaption><h3>GTA Vice City Stories</h3></figcaption></figure></ul>
+					</figcaption></figure></ul>";
+				}
+			?>
 			
 			</li>
 		</div>
@@ -89,20 +80,15 @@
 			</div>
 			<li class = "item-loja"> 
 				<h2> Jogos Cadastrados na Sua Biblioteca</h2>
-				<ul><figure><img class = "img-capa" src="007.jpg"><figcaption><h3>007 Nightfire</h3>
-					<br>Categoria: Ação
-					<br>Estado de uso: 1 ano
-					<br><button>Disponibilizar</button>
-				</figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="4fantastico.jpg"><figcaption><h3>Quarteto Fantástico</h3></figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="bully.jpg"><figcaption><h3>Bully</figcaption></h3></figure></ul>
-				<ul><figure><img class = "img-capa" src="dbzbudokai.jpg"><figcaption><h3>Dragon Ball Z: Budokai Tenkaichi 3</h3></figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="defjam.jpg"><figcaption><h3>DEF Jam Fight For NY</h3></figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="deltablack.jpg"><figcaption><h3>Delta Force: Black Hawk Down</h3></figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="devilmaycry.jpg"><figcaption><h3>Devil May Cry</h3></figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="f12006.jpg"><figcaption><h3>Fórmula 1 2006</h3></figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="fifa14.jpg"><figcaption><h3>FIFA 14</h3></figcaption></figure></ul>
-				<ul><figure><img class = "img-capa" src="granturismo4.jpg"><figcaption><h3>Gran Turismo 4</h3></figcaption></figure></ul>
+				<?php foreach($_SESSION['jogosUsuarioLogado'] as $jogo){
+					echo "<ul><figure><img class = 'img-capa' src='007.jpg'><figcaption><h3>".$jogo['nome']."</h3>
+						<br>Cidade: Indefinida
+						<br>Categoria: ".$jogo['categoria']."
+						<br>Estado de uso: ".$jogo['anosUso']."
+						<br><button>Trocar</button>
+					</figcaption></figure></ul>";
+				}
+				?>
 			</li>
 		</div>
 		<div class = "opcao-3"> 

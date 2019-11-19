@@ -1,4 +1,5 @@
 <?php
+
   //controla o cadastro dos jogos
 	session_start();
   require_once '../models/Jogo.php';
@@ -17,9 +18,12 @@
     $capa = $_POST['capa-jogo'];
     $id = $_SESSION['idUsuario'];
 
+    //Upload aqui
+
     $novoJogo = new Jogo($nome, $capa, $anosUso, $categoria, $id);
     $novoJogoDAO = new JogoDAO();
     $novoJogoDAO->create($novoJogo);
     header('Location: ../views/usuarioInicio.php');
   }
+
 ?>

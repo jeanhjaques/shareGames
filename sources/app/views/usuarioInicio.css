@@ -282,7 +282,7 @@ article figcaption{
 	margin-left: 5px;
 	padding: 0;
 	float: right;
-	width: 110px;
+	width: 140px;
 	color: white;
 }
 
@@ -328,7 +328,7 @@ article p{
 article figcaption button{
 	color: white;
 	background: red;
-	margin-top: 30%;
+	margin-top: 0%;
 	margin-left: 25%;
 	font-size: 90%;
 	cursor: pointer;
@@ -340,7 +340,7 @@ article figcaption button{
 
 article .opcao-2 figcaption button{
 	margin-left: 5%;
-	margin-top: 70%;
+	margin-top: 0%;
 }
 
 article figcaption button:hover{
@@ -365,7 +365,7 @@ footer button{
 	background-color: transparent;
 	border: none;
 	font-size: 150%;
-	color: rgb(0, 77, 192);
+	color: white;
 	text-decoration: none;
 	display: inline;
 	cursor: pointer;
@@ -387,6 +387,10 @@ footer button:focus{
 	header nav ul li a{ 
 		font-size: 40px;
 		margin: 5px;
+	}
+
+	span{
+		font-size: 40px;
 	}
 
 	header .img-perfil{

@@ -33,6 +33,13 @@
         $_SESSION['complemento'] = $item['complemento'];
         $_SESSION['idUsuario'] = $item['idUsuario'];
       }
+        $jogoDAO = new JogoDAO();
+        $jogosUsuarioLogado = array();
+        $_SESSION['jogosUsuarioLogado'] = array();
+        $_SESSION['jogosUsuarioLogado'] = $jogoDAO->readByIdUsuario($_SESSION['idUsuario']);
+        $_SESSION['jogosLoja'] = array();
+        $_SESSION['jogosLoja'] = $jogoDAO->read();
+        
     }
     else{
       $_SESSION['loginErro'] = "<h1>Acesso Negado</h1>";

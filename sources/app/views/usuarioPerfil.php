@@ -15,7 +15,7 @@
 	<header>
         <nav>
 			<ul> 
-				<li><a href="#"><?php echo $_SESSION['nome'];?></a></li>
+				<li><span><?php echo $_SESSION['nome'];?></span></li>
 			    <li><a href="#">Configurações</a> 
 			      <ul class ="sub-menu"> 
 			        <li><a href="#">Ajuda</a></li> 

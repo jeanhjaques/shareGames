@@ -50,7 +50,7 @@
         }
 
         public function delete($idJogo){
-            $sql = 'DELETE FROM jogo WHERE idJogo = $id';
+            $sql = 'DELETE FROM jogo WHERE idJogo = ?';
 
             $stmt = Conexao::getConnect()->prepare($sql);
 
