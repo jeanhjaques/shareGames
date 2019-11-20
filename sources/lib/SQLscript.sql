@@ -36,13 +36,13 @@ CREATE TABLE deseja(
 );
 
 CREATE TABLE troca(
-	idJogoA INTEGER NOT NULL,
-	idUsuarioA INTEGER NOT NULL,
-	idJogoB INTEGER NOT NULL,
+    idJogoA INTEGER NOT NULL,
+    idUsuarioA INTEGER NOT NULL,
+    idJogoB INTEGER NOT NULL,
     idUsuarioB INTEGER NOT NULL,
     idTroca INTEGER AUTO_INCREMENT PRIMARY KEY,
     FOREIGN KEY(idJogoA) REFERENCES jogo(idJogo),
-	FOREIGN KEY(idJogoB) REFERENCES jogo(idJogo),
+    FOREIGN KEY(idJogoB) REFERENCES jogo(idJogo),
     FOREIGN KEY(idUsuarioA) REFERENCES usuario(idUsuario),
     FOREIGN KEY(idUsuarioB) REFERENCES usuario(idUsuario)
 );
