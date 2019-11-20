@@ -5,7 +5,7 @@
 
 		public static function getConnect(){
 			if(!isset(self::$instance)){
-				self::$instance = new \PDO('mysql:host=db4free.net;dbname=sharegames;', 'jean_henrique', 'senhasecreta');
+				self::$instance = new \PDO('mysql:host=localhost;dbname=share;', 'root', '');
 			}
 			return self::$instance;
 		}

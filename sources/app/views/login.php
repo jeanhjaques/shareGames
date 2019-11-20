@@ -133,10 +133,10 @@
 
 						<br>
 						<label for="complemento"></label>
-						<input id = "complemento" name="complemento" required="required" type="text" placeholder="Complemento">
+						<input id = "complemento" name="complemento" type="text" placeholder="Complemento">
 
 						<br>
-						<input id = "termoscondicoes" type="checkbox" name="termoscondicoes" value="">
+						<input id = "termoscondicoes" type="checkbox" required="required" name="termoscondicoes" value="">
 						<label for = "termoscondicoes">Eu li e aceito os termos</label>
 
 						<br>

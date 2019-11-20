@@ -57,7 +57,7 @@
 		<div class = "opcao-2"> 
 			<button onclick="mudarEstadoAndOcultBtn('cadastrar-jogo', 'btn-cadastro');" class="btn-cadastro">Cadastrar novo jogo</button>
 			<div class="cadastrar-jogo">
-				<form method="post" action="../controllers/cadastroJogoController.php">
+				<form method="post" action="../controllers/cadastroJogoController.php" enctype="multipart/form-data">
 					<h2>Insira os dados do  novo jogo</h2>
 					<p>Nome:</p>
 					<label for="nome-jogo"></label>

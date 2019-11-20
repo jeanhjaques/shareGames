@@ -68,5 +68,12 @@
 
             return $resultado;
         }
+
+        public function showImage($idJogo){
+            $sql = 'SELECT capa FROM jogo WHERE idJogo = ?';
+            $stmt = Conexao::getConnect()->prepare($sql);
+            $stmt->bindValue(1, $idJogo);
+            $stmt->execute();
+        }
     }
 ?>
