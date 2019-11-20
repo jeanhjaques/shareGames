@@ -328,8 +328,8 @@ article p{
 article figcaption button{
 	color: white;
 	background: red;
-	margin-top: 0%;
-	margin-left: 25%;
+	margin-top: 4%;
+	margin-left: 1%;
 	font-size: 90%;
 	cursor: pointer;
 	border:none;
@@ -354,10 +354,32 @@ article figcaption button:focus{
 	color:white
 }
 
+article .confirmar{
+	visibility: hidden;
+	font-size: 20px;
+	position: absolute;
+	justify-content: center;
+	color: rgb(0, 77, 192);
+	background-color: white;
+	margin-top: 60%;
+	margin-bottom: 5%;
+	margin-left: 32%;
+	margin-right: 30%;
+	text-align: center;
+	bottom: 0;
+	padding: 10px;
+	z-index: 30;
+	box-shadow: 0px 0px 20px 1px black;
+}
+
+article .confirmar input{
+	color: white;
+}
+
 footer{
-		text-align: center;
-		margin-top: 0;
-		margin-bottom: 0;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 footer button{

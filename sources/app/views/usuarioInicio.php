@@ -34,25 +34,37 @@
 		<div class = "opcao-1"> 
 			<li class = "item-loja"> 
 				<h2> Jogos Disponíveis </h2>
-			<div class="pesquisar-jogo">
-					<form method="post" action="../controllers/pesquisaJogosController.php">
-						<label for="pesquisa-jogo"></label>
-						<input id="pesquisa-jogo" name="pesquisa-jogo" required="required" type="search" placeholder="Buscar Jogo">
-						<br>
-						<input type="submit" value="Buscar">
-					</form>
-			</div>
-			<?php foreach($_SESSION['jogosLoja'] as $jogo){
-				echo "<ul><figure><img class = 'img-capa' src='007.jpg'><figcaption><h3>".$jogo['nome']."</h3>
-					<br>Cidade: Indefinida
-					<br>Categoria: ".$jogo['categoria']."
-					<br>Estado de uso: ".$jogo['anosUso']."
-					<br><button>Trocar</button>
-					</figcaption></figure></ul>";
-				}
-			?>
-			
+					<div class="pesquisar-jogo">
+						<form method="post" action="../controllers/pesquisaJogosController.php">
+							<label for="pesquisa-jogo"></label>
+							<input id="pesquisa-jogo" name="pesquisa-jogo" required="required" type="search" placeholder="Buscar Jogo">
+							<br>
+							<input type="submit" value="Buscar">
+						</form>
+				</div>
+				<?php foreach($_SESSION['jogosLoja'] as $jogo){
+					if($_SESSION['idUsuario']!= $jogo['idUsuario']){
+						echo "<ul><figure><img class = \"img-capa\" src=\"007.jpg\"><figcaption><h3>".$jogo['nome']."</h3>
+							<br>Cidade: Indefinida
+							<br>Categoria: ".$jogo['categoria']."
+							<br>Estado de uso: ".$jogo['anosUso']."
+							<br><button onclick=\"mudarEstado('confirmar')\">Solicitar Troca</button>
+							</figcaption></figure></ul>";
+						}
+					}
+				?>
+				
 			</li>
+		</div>
+		<div class="confirmar">
+				<form method='post' action="../controllers/solicitacaoControler.php">
+					<h2>Escolha um jogo para oferecer</h2>
+					<?php foreach($_SESSION['jogosUsuarioLogado'] as $jogo){
+						echo "<input type='radio' id = 'categoria-jogo' required='required' name='categoria-jogo' value=".$jogo['nome'].">".$jogo['nome']."<br>";
+						}
+					?>
+					<input onclick="mudarEstado('confirmar');" type="submit" value="Solicitar Troca"><br>
+				</form>
 		</div>
 		<div class = "opcao-2"> 
 			<button onclick="mudarEstadoAndOcultBtn('cadastrar-jogo', 'btn-cadastro');" class="btn-cadastro">Cadastrar novo jogo</button>
@@ -85,7 +97,7 @@
 						<br>Cidade: Indefinida
 						<br>Categoria: ".$jogo['categoria']."
 						<br>Estado de uso: ".$jogo['anosUso']."
-						<br><button>Trocar</button>
+						<br><button>Remover</button>
 					</figcaption></figure></ul>";
 				}
 				?>

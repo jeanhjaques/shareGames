@@ -44,3 +44,13 @@ function mudarEstadoAndExibeBtn(classForExibition, classBtn){
 		displayValue[0].style.visibility = "visible";
 	}
 }
+
+function mudarEstado(classForExibition){
+	var displayValue = document.getElementsByClassName(classForExibition);
+	if(displayValue[0].style.display.visibility = "hidden"){
+		displayValue[0].style.visibility = "visible";
+	}
+	else{
+		displayValue[0].style.visibility = "hidden";
+	}
+}

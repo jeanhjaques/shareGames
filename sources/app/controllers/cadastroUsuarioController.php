@@ -25,7 +25,8 @@
     $rua = $_POST['rua'];
     $numero = $_POST['numero'];
     $complemento = $_POST['complemento'];
-    $novoUsuario = new Usuario($nome, $sobrenome, $dataNascimento, $cpf, $email, $senha, $cep, $pais, $cidade, $estado, $bairro, $rua, $numero, $complemento);
+    $imagemCapa = "teste";
+    $novoUsuario = new Usuario($nome, $sobrenome, $dataNascimento, $cpf, $email, $senha, $cep, $pais, $cidade, $estado, $bairro, $rua, $numero, $complemento, $imagemCapa);
     $novoUsuarioDAO = new UsuarioDAO();
     $novoUsuarioDAO->create($novoUsuario);
     header('Location: ../views/login.php');

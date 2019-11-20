@@ -1,0 +1,20 @@
+create table usuario(
+	nome varchar(45),
+    sobrenome varchar(45),
+    dataNascimento varchar(45),
+    cpf varchar(45),
+    email varchar(45),
+    senha varchar(45),
+    cep varchar(45),
+    pais varchar(45),
+    cidade varchar(45),
+    estado varchar(45),
+    bairro varchar(45),
+    rua varchar(45),
+	numero varchar(45),
+    complemento varchar(45),
+    id int auto_increment,
+    idBiblioteca int unique,
+    idJogosDesejados int unique,
+    primary key (id)
+);

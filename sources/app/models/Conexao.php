@@ -5,7 +5,7 @@
 
 		public static function getConnect(){
 			if(!isset(self::$instance)){
-				self::$instance = new \PDO('mysql:host=localhost;dbname=share;', 'root', '');
+				self::$instance = new \PDO('mysql:host=localhost;dbname=share;', 'root', 'vertrigo');
 			}
 			return self::$instance;
 		}

@@ -20,10 +20,10 @@
     $nome = $_POST['nome-jogo'];
     $anosUso = $_POST['anosUso-jogo'];
     $categoria = $_POST['categoria-jogo'];
-    $capa = $_FILES['capa-jogo']['name'];
+    $capa = $_FILES['capa-jogo']['tmp_name'];
     $id = $_SESSION['idUsuario'];
 
-    $diretorio = "C:/wamp64/www/Trabalho/Sistema_ProgWeb/shareGames/sources/public/upload/";
+    $diretorio = "../../public/upload/";
     move_uploaded_file($_FILES['capa-jogo']['tmp_name'], $diretorio);
     //Upload aqui
 
