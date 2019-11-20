@@ -13,6 +13,7 @@ CREATE TABLE usuario(
     rua VARCHAR(60),
     numero VARCHAR(10),
     complemento VARCHAR(90),
+    imagemPerfil VARCHAR(100),
     idUsuario INTEGER AUTO_INCREMENT PRIMARY KEY
 );
 
