@@ -7,8 +7,6 @@
         private $cpf;
         private $email;
         private $senha;
-        private $idBiblioteca;
-        private $idJogosDesejados;
         private $cep;
         private $pais;
         private $cidade;
@@ -17,10 +15,11 @@
         private $rua;
         private $numero;
         private $complemento;
+        private $imagemPerfil;
         private $id;
 
         public function __construct($nome, $sobrenome, $dataNascimento, $cpf, $email, $senha, $cep, $pais, $cidade, $estado, $bairro, $rua, $numero,
-            $complemento){
+            $complemento, $imagemPerfil){
             $this->nome = $nome;
             $this->sobrenome = $sobrenome;
             $this->dataNascimento = $dataNascimento;
@@ -35,8 +34,7 @@
             $this->rua = $rua;
             $this->numero = $numero;
             $this->complemento = $complemento;
-            $this->idBiblioteca = NULL;
-            $this->idJogosDesejados = NULL;
+            $this->imagemPerfil = $imagemPerfil;
             $this->id = NULL;    
         }
 
@@ -152,6 +150,14 @@
         public function setComplemento($complemento){
             $this -> complemento = $complemento;
         }
+        
+        public function getImagemPerfil(){
+            return $this -> imagemPerfil;
+        }
+
+        public function setImagemPerfil($imagemPerfil){
+            $this -> imagemPerfil = $imagemPerfil;
+        }
 
         public function getId(){
             $usuarioDAO.readByEmail($this->email);
@@ -159,7 +165,7 @@
 
         public function setId($id){
             $this -> id = $id;
-        }
+        }   
 
     }
 ?>
