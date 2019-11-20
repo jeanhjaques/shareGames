@@ -6,7 +6,7 @@
 
         public function create(Usuario $usuario){
             $sql = 'INSERT INTO usuario (nome, sobrenome, dataNascimento, cpf, email, senha, cep, pais, cidade, estado, bairro, rua, numero,
-            complemento) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+            complemento, imagemPerfil) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
             
             $stmt = Conexao::getConnect()->prepare($sql);
 
@@ -24,6 +24,7 @@
             $stmt->bindValue(12, $usuario->getRua());
             $stmt->bindValue(13, $usuario->getNumero());
             $stmt->bindValue(14, $usuario->getComplemento());
+            $stmt->bindValue(15, $usuario->getImagemPerfil());
 
             $stmt->execute();
         }
@@ -65,7 +66,7 @@
         public function update(Usuario $usuario){
             $sql = 'UPDATE usuario SET nome = ?, sobrenome = ?, dataNascimento = ?, cpf = ?,
             email = ?, senha = ?, cep = ?, pais = ?, cidade = ?, estado = ?, bairro = ?, rua = ?, numero = ?,
-            complemento = ? WHERE id = ?';
+            complemento = ?, imagemPerfil = ?  WHERE id = ?';
 
             $stmt = Conexao::getConnect()->prepare($sql);
 
@@ -83,7 +84,8 @@
             $stmt->bindValue(12, $usuario->getRua());
             $stmt->bindValue(13, $usuario->getNumero());
             $stmt->bindValue(14, $usuario->getComplemento());
-            $stmt->bindValue(15, $usuario->getId());
+            $stmt->bindValue(15, $usuario->getImagemPerfil());
+            $stmt->bindValue(16, $usuario->getId());
 
             $stmt->execute();
         }
