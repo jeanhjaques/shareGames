@@ -1,7 +1,9 @@
 <?php
+  date_default_timezone_set('America/Manaus');
 
   //controla o cadastro dos jogos
-	session_start();
+  session_start();
+  
   require_once '../models/Jogo.php';
 	require_once '../models/JogoDAO.php';
 
@@ -12,26 +14,26 @@
     $valido = isset($_POST['nome-jogo'], $_POST['anosUso-jogo'], $_POST['categoria-jogo'], $_FILES['capa-jogo']['name']);
   }
   if($valido){ 
-    /*$extensao = strtolower(substr($_FILES['capa-jogo']['name'], -4));
-    $novo_nome = md5(time()) . $extensao;
-    $diretorio = "upload";
-    move_uploaded_file($_FILES['capa-jogo']['tmp_name'], $diretorio.$novo_nome);*/
 
     $nome = $_POST['nome-jogo'];
     $anosUso = $_POST['anosUso-jogo'];
     $categoria = $_POST['categoria-jogo'];
-    $capa = $_FILES['capa-jogo']['tmp_name'];
     $id = $_SESSION['idUsuario'];
 
+    $extensao = strtolower(substr($_FILES['capa-jogo']['name'], -3));
+    $data = date('d-m-Y-H-i-s');
+    $novo_nome = $data.".".$extensao;
     $diretorio = "../../public/upload/";
-    move_uploaded_file($_FILES['capa-jogo']['tmp_name'], $diretorio);
-    //Upload aqui
+    move_uploaded_file($_FILES['capa-jogo']['tmp_name'], $diretorio.$novo_nome);
 
+    $capa = $novo_nome;
     $novoJogo = new Jogo($nome, $capa, $anosUso, $categoria, $id);
     $novoJogoDAO = new JogoDAO();
     $novoJogoDAO->create($novoJogo);
-    header('Location: ../views/usuarioInicio.php');
-  }
 
+    $_SESSION['jogosUsuarioLogado'] = $novoJogoDAO->readByIdUsuario($_SESSION['idUsuario']);
+    header('Location: ../views/usuarioInicio.php');
+
+  }
 
 ?>

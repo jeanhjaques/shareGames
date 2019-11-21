@@ -69,11 +69,15 @@
             return $resultado;
         }
 
-        public function showImage($idJogo){
-            $sql = 'SELECT capa FROM jogo WHERE idJogo = ?';
+        public function readByIdJogo($idJogo){
+            $sql = 'SELECT * FROM jogo WHERE idJogo = ?';
             $stmt = Conexao::getConnect()->prepare($sql);
             $stmt->bindValue(1, $idJogo);
             $stmt->execute();
+            $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+            return $resultado;
         }
+
     }
 ?>

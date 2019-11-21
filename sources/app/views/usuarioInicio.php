@@ -1,6 +1,12 @@
 <?php
 	session_start();
+	
+	if(isset($_SESSION['jogoCadastradoSucesso'])){
+		echo $_SESSION['jogoCadastradoSucesso'];
+		unset($_SESSION['jogoCadastradoSucesso']);
+	}
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -44,11 +50,13 @@
 				</div>
 				<?php foreach($_SESSION['jogosLoja'] as $jogo){
 					if($_SESSION['idUsuario']!= $jogo['idUsuario']){
-						echo "<ul><figure><img class = \"img-capa\" src=\"007.jpg\"><figcaption><h3>".$jogo['nome']."</h3>
+						echo "<ul><figure><img class = \"img-capa\" src=\"../../public/upload/".$jogo['capa']."\">
+						<figcaption><h3>".$jogo['nome']."</h3>
 							<br>Cidade: Indefinida
 							<br>Categoria: ".$jogo['categoria']."
 							<br>Estado de uso: ".$jogo['anosUso']."
-							<br><button onclick=\"mudarEstado('confirmar')\">Solicitar Troca</button>
+							<br>ID: ".$jogo['idJogo']."
+							<br><button class =\"botao\" value = \"".$jogo['idJogo']."\"onclick=\"mudarEstado('confirmar')\">Solicitar Troca</button>
 							</figcaption></figure></ul>";
 						}
 					}
@@ -57,16 +65,22 @@
 			</li>
 		</div>
 		<div class="confirmar">
-				<form method='post' action="../controllers/solicitacaoControler.php">
+				<form method='post' action="../controllers/solicitacaoController.php">
 					<h2>Escolha um jogo para oferecer</h2>
 					<?php foreach($_SESSION['jogosUsuarioLogado'] as $jogo){
-						echo "<input type='radio' id = 'categoria-jogo' required='required' name='categoria-jogo' value=".$jogo['nome'].">".$jogo['nome']."<br>";
+						echo "<input type='radio' id = 'idJogoProposta' required='required' name='idJogoProposta' value=".$jogo['idJogo'].">".$jogo['nome']."<br>";
 						}
 					?>
-					<input onclick="mudarEstado('confirmar');" type="submit" value="Solicitar Troca"><br>
+					<br>
+					<span> Para confirmar escreva o ID do jogo desejado <span>
+					<br>
+					<label for="idJogoDesejado"></label>
+					<input type="number" id = "idJogoDesejado" name = "idJogoDesejado" required = "required"><br>
+					<input onclick="mudarEstado('confirmar');" type="submit" value="solicitacao"><br>
 				</form>
+				<button onclick="mudarEstado('confirmar');">Cancelar</button>
 		</div>
-		<div class = "opcao-2"> 
+		<div class = "opcao-2" id ="opcao-2"> 
 			<button onclick="mudarEstadoAndOcultBtn('cadastrar-jogo', 'btn-cadastro');" class="btn-cadastro">Cadastrar novo jogo</button>
 			<div class="cadastrar-jogo">
 				<form method="post" action="../controllers/cadastroJogoController.php" enctype="multipart/form-data">
@@ -93,7 +107,8 @@
 			<li class = "item-loja"> 
 				<h2> Jogos Cadastrados na Sua Biblioteca</h2>
 				<?php foreach($_SESSION['jogosUsuarioLogado'] as $jogo){
-					echo "<ul><figure><img class = 'img-capa' src='007.jpg'><figcaption><h3>".$jogo['nome']."</h3>
+					echo "<ul><figure><img class = \"img-capa\" src=\"../../public/upload/".$jogo['capa']."\">
+					<figcaption><h3>".$jogo['nome']."</h3>
 						<br>Cidade: Indefinida
 						<br>Categoria: ".$jogo['categoria']."
 						<br>Estado de uso: ".$jogo['anosUso']."

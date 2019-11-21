@@ -91,7 +91,7 @@
         }
 
         public function delete($id){
-            $sql = 'DELETE FROM usuario WHERE id = $id';
+            $sql = 'DELETE FROM usuario WHERE idUsuario = ?';
 
             $stmt = Conexao::getConnect()->prepare($sql);
 

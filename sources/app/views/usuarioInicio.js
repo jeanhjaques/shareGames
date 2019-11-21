@@ -47,7 +47,7 @@ function mudarEstadoAndExibeBtn(classForExibition, classBtn){
 
 function mudarEstado(classForExibition){
 	var displayValue = document.getElementsByClassName(classForExibition);
-	if(displayValue[0].style.display.visibility = "hidden"){
+	if(displayValue[0].style.visibility = "hidden"){
 		displayValue[0].style.visibility = "visible";
 	}
 	else{
