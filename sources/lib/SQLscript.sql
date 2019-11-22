@@ -41,6 +41,8 @@ CREATE TABLE troca(
     idJogoB INTEGER NOT NULL,
     idUsuarioB INTEGER NOT NULL,
     idTroca INTEGER AUTO_INCREMENT PRIMARY KEY,
+    estado INTEGER NOT NULL,
+    dataTroca TIMESTAMP NOT NULL,
     FOREIGN KEY(idJogoA) REFERENCES jogo(idJogo),
     FOREIGN KEY(idJogoB) REFERENCES jogo(idJogo),
     FOREIGN KEY(idUsuarioA) REFERENCES usuario(idUsuario),
