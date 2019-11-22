@@ -11,7 +11,7 @@ ini_set("display_errors", 1);
 
 require_once '../models/Usuario.php';
 require_once '../models/UsuarioDAO.php';
-require_once '../models/jogoDAO.php';
+require_once '../models/JogoDAO.php';
 require_once '../models/TrocaDAO.php';
 
 if((isset($_POST['email_login'])) && (isset($_POST['senha_login']))){
