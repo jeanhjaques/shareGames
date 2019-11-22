@@ -9,13 +9,13 @@ class Troca{
     private $dataTroca;
     private $idTroca;
 
-    public function __construct($idUsuarioA, $isUsuarioB, $idJogoA, $idJogoB){
-        $this->idUsuarioA = idUsuarioA;
-        $this->idUsuarioB = idUsuarioB;
-        $this->idJogoA = idJogoA;
-        $this->idJogoB = idJogoB;
+    public function __construct($idUsuarioA, $idUsuarioB, $idJogoA, $idJogoB){
+        $this->idUsuarioA = $idUsuarioA;
+        $this->idUsuarioB = $idUsuarioB;
+        $this->idJogoA = $idJogoA;
+        $this->idJogoB = $idJogoB;
         $this->estadoTroca = NULL;
-        $thus->dataTroca = NULL;
+        $this->dataTroca = NULL;
         $this->idTroca = NULL;    
     }
 

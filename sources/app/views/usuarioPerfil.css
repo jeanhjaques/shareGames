@@ -18,12 +18,12 @@ header ul{
 }
 
 header{
-    margin-top: 0;
+	margin-top: 0;
 	margin-left: 0;
 	margin-right: 0;
 	margin-bottom: 0;
 	background-color: white;
-    padding: 1px;
+	padding: 1px;
 	background-image: url("../../public/logo.png");
 	background-repeat: no-repeat;
 	background-position: left;
@@ -33,9 +33,9 @@ header{
 }
 
 header nav{
-    margin-right: 8%;
-    text-align: right;
-    font-size: 20px;
+	margin-right: 8%;
+	text-align: right;
+	font-size: 20px;
 }
 
 header nav ul {
@@ -59,14 +59,14 @@ header nav li ul {
 
 header nav ul li a{
 	text-decoration: none;
-    color: rgb(0, 77, 192);
-    margin: 10px;
+	color: rgb(0, 77, 192);
+	margin: 10px;
 }
 
 header nav .sub-menu li a{
-    margin-left: 0;
-    margin-right: 40px;
-    text-align: left;
+	margin-left: 0;
+	margin-right: 40px;
+	text-align: left;
 }
 
 header nav ul li a:hover{
@@ -75,9 +75,9 @@ header nav ul li a:hover{
 
 header nav .sub-menu li{
 	box-shadow: 0px 0px 2px 0px;
-    background-color: white;
-    margin-left: 10px;
-    text-align: left;
+	background-color: white;
+	margin-left: 10px;
+	text-align: left;
 }
 
 header nav li:hover ul { display: block; }
@@ -89,12 +89,12 @@ header nav li:hover ul { display: block; }
 
 .retorno{
 	text-decoration: none;
-    color: white;
-    margin: 15px;
-    padding: 2px;
-    background-color: red;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px 1px grey;
+	color: white;
+	margin: 15px;
+	padding: 2px;
+	background-color: red;
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px 1px grey;
 }
 
 article .menu-principal{
@@ -131,19 +131,19 @@ article .opcao-2{
 
 article .btn-cadastro{
 	background-color: red;
-    color: white;
-    cursor: pointer;
-    cursor: pointer;
-    border: none;
-    font-family: 'Bree Serif', serif;
-    font-size: 90%;
-    padding: 6px;
-    outline: none;
-    align-items: center;
-    text-align: center;
-    border-radius: 6px;
-    margin: 5px;
-    box-shadow: 0px 0px 2px 1px grey;
+	color: white;
+	cursor: pointer;
+	cursor: pointer;
+	border: none;
+	font-family: 'Bree Serif', serif;
+	font-size: 90%;
+	padding: 6px;
+	outline: none;
+	align-items: center;
+	text-align: center;
+	border-radius: 6px;
+	margin: 5px;
+	box-shadow: 0px 0px 2px 1px grey;
 }
 
 article  .btn-cadastro:hover{
@@ -179,38 +179,38 @@ article .opcao-2 .btn-ocultar:focus{
 }
 
 label{
-    font-size: 18px;
-    margin-top: 0;
+	font-size: 18px;
+	margin-top: 0;
 }
 
 input{
-    font-family: 'Bree Serif', serif;
-    font-size: 90%;
-    padding: 6px;
-    outline: none;
-    align-items: left;
-    text-align: left;
-    border-radius: 6px;
-    border: 1px solid  rgb(0, 77, 192);
-    width: 275px;
-    margin-bottom: 0px;
-    box-shadow: 0px 0px 2px 1px grey;
-    margin-top: 0;
+	font-family: 'Bree Serif', serif;
+	font-size: 90%;
+	padding: 6px;
+	outline: none;
+	align-items: left;
+	text-align: left;
+	border-radius: 6px;
+	border: 1px solid  rgb(0, 77, 192);
+	width: 275px;
+	margin-bottom: 0px;
+	box-shadow: 0px 0px 2px 1px grey;
+	margin-top: 0;
 }
 
 select{
 	font-family: 'Bree Serif', serif;
-    font-size: 90%;
-    padding: 6px;
-    outline: none;
-    align-items: left;
-    text-align: left;
-    border-radius: 6px;
-    border: 1px solid  rgb(0, 77, 192);
-    width: 291px;
-    margin-bottom: 0px;
-    box-shadow: 0px 0px 2px 1px grey;
-    margin-top: 0;
+	font-size: 90%;
+	padding: 6px;
+	outline: none;
+	align-items: left;
+	text-align: left;
+	border-radius: 6px;
+	border: 1px solid  rgb(0, 77, 192);
+	width: 291px;
+	margin-bottom: 0px;
+	box-shadow: 0px 0px 2px 1px grey;
+	margin-top: 0;
 }
 
 option{
@@ -223,33 +223,33 @@ option{
 }
 
 input:focus{
-    border: 1px solid  rgb(0, 77, 192);
+	border: 1px solid  rgb(0, 77, 192);
 }
 
 input:valid{
-    border: 1px solid rgb(0, 255, 13);
+	border: 1px solid rgb(0, 255, 13);
 }
 
 input[type = checkbox]{
-    width: 20px;
+	width: 20px;
 }
 
 input[type = submit]{
-    background-color:  red;
-    color: white;
-    cursor: pointer;
+	background-color:  red;
+	color: white;
+	cursor: pointer;
 	outline-style: none;
 	cursor: pointer;
 	border:none;
 	font-family: 'Bree Serif', serif;
 	align-items: center;
-    text-align: center;
-    margin-bottom: 10px;
-    margin-top: 10px;
+	text-align: center;
+	margin-bottom: 10px;
+	margin-top: 10px;
 }
 
 input[type = submit]:hover{
-    background-color:  grey;
+	background-color:  grey;
 }
 
 input[type = submit]:valid{
@@ -276,8 +276,8 @@ article ul{
 article figure{
 	display: inline-flex;
 	text-align: left;
-    font-style: italic;
-    font-size: 90%;
+	font-style: italic;
+	font-size: 90%;
 	text-indent: 0;
 	border: none;
 	background-color: rgb(0, 77, 192);
@@ -367,9 +367,9 @@ article figcaption button:focus{
 }
 
 footer{
-		text-align: center;
-		margin-top: 0;
-		margin-bottom: 0;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 footer button{
@@ -398,7 +398,7 @@ footer button:focus{
 	}
 	header nav ul li a{ 
 		font-size: 40px;
-        margin: 5px;
+		margin: 5px;
 	}
 
 	span{
@@ -462,9 +462,9 @@ footer button:focus{
 
 	article .btn-cadastro{
 		font-size: 40px;
-    }
-    
-    .retorno{
+	}
+	
+	.retorno{
 		font-size: 40px;
 	}
 }

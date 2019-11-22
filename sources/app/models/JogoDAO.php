@@ -1,41 +1,41 @@
 <?php 
     //CRUD da classe
-    require_once 'Conexao.php';
-    require_once 'Jogo.php';
-    class JogoDAO{
+require_once 'Conexao.php';
+require_once 'Jogo.php';
+class JogoDAO{
 
-        public function create(Jogo $jogo){
-            $sql = 'INSERT INTO jogo (nome, capa, anosUso, categoria, idUsuario) VALUES(?, ?, ?, ?, ?)';
-            
-            $stmt = Conexao::getConnect()->prepare($sql);
+    public function create(Jogo $jogo){
+        $sql = 'INSERT INTO jogo (nome, capa, anosUso, categoria, idUsuario) VALUES(?, ?, ?, ?, ?)';
+        
+        $stmt = Conexao::getConnect()->prepare($sql);
 
-            $capa = 'capa';
+        $capa = 'capa';
 
-            $stmt->bindValue(1, $jogo->getNome());
-            $stmt->bindValue(2, $jogo->getCapa());
-            $stmt->bindValue(3, $jogo->getAnosUso());
-            $stmt->bindValue(4, $jogo->getCategoria());
-            $stmt->bindValue(5, $jogo->getIdUsuario());
-            $stmt->execute();
-        }
+        $stmt->bindValue(1, $jogo->getNome());
+        $stmt->bindValue(2, $jogo->getCapa());
+        $stmt->bindValue(3, $jogo->getAnosUso());
+        $stmt->bindValue(4, $jogo->getCategoria());
+        $stmt->bindValue(5, $jogo->getIdUsuario());
+        $stmt->execute();
+    }
 
-        public function read(){
-            $sql = 'SELECT * FROM jogo';
+    public function read(){
+        $sql = 'SELECT * FROM jogo';
 
-            $stmt = Conexao::getConnect()->prepare($sql);
+        $stmt = Conexao::getConnect()->prepare($sql);
 
-            $stmt->execute();
+        $stmt->execute();
 
-            if($stmt->rowCount()>0){
+        if($stmt->rowCount()>0){
                 $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC); //retorna um array com todos os registros
                 return $resultado;
             }
             else{
                  return []; // retorna um array vazio caso não tenha nenhum item
-            }
-        }
+             }
+         }
 
-        public function update(Jogo $jogo){
+         public function update(Jogo $jogo){
             $sql = 'UPDATE jogo SET nome = ?, capa = ?, anosUso = ?, categoria = ? WHERE idJogo = ?';
 
             $stmt = Conexao::getConnect()->prepare($sql);
@@ -80,4 +80,4 @@
         }
 
     }
-?>
+    ?>

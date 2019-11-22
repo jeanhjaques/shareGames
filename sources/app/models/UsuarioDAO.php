@@ -1,4 +1,4 @@
-<?php 
+    <?php 
     //CRUD da classe Usuario
     require_once 'Conexao.php';
     require_once 'Usuario.php';
@@ -42,14 +42,14 @@
             }
             else{
                  return []; // retorna um array vazio caso não tenha nenhum item
-            }
-        }
+             }
+         }
 
-        public function readByCPF($cpf){
+         public function readByCPF($cpf){
             $sql = 'SELECT * FROM usuario WHERE cpf = ?';
 
             $stmt = Conexao::getConnect()->prepare($sql);
-           
+            
             $stmt->bindValue(1, $cpf);
             
             $stmt->execute();
@@ -60,10 +60,10 @@
             }
             else{
                  return []; // retorna um array vazio caso não tenha nenhum item
-            }
-        }
+             }
+         }
 
-        public function update(Usuario $usuario){
+         public function update(Usuario $usuario){
             $sql = 'UPDATE usuario SET nome = ?, sobrenome = ?, dataNascimento = ?, cpf = ?,
             email = ?, senha = ?, cep = ?, pais = ?, cidade = ?, estado = ?, bairro = ?, rua = ?, numero = ?,
             complemento = ?, imagemPerfil = ?  WHERE id = ?';
@@ -114,38 +114,38 @@
                 return true;
             }
             else{
-                 return false;
-            }
+               return false;
+           }
+       }
+
+       public function getIdByEmail($email){
+        $sql = 'SELECT idUsuario FROM usuario WHERE email = ?';
+
+        $stmt = Conexao::getConnect()->prepare($sql);
+
+        $stmt->bindValue(1, $email);
+
+        $stmt->execute();
+
+        $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        
+        $id = 0;
+
+        foreach($resultado as $item){
+            $id = $item["idUsuario"];
         }
 
-        public function getIdByEmail($email){
-            $sql = 'SELECT idUsuario FROM usuario WHERE email = ?';
-
-            $stmt = Conexao::getConnect()->prepare($sql);
-
-            $stmt->bindValue(1, $email);
-
-            $stmt->execute();
-
-            $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-            
-            $id = 0;
-
-            foreach($resultado as $item){
-                $id = $item["idUsuario"];
-            }
-
-            return $id;
-        }
-
-        public function readByEmail($email){
-            $sql = 'SELECT * FROM usuario WHERE email = ?';
-            $stmt = Conexao::getConnect()->prepare($sql);
-            $stmt->bindValue(1, $email);
-            $stmt->execute();
-            $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-
-            return $resultado;
-        }
+        return $id;
     }
+
+    public function readByEmail($email){
+        $sql = 'SELECT * FROM usuario WHERE email = ?';
+        $stmt = Conexao::getConnect()->prepare($sql);
+        $stmt->bindValue(1, $email);
+        $stmt->execute();
+        $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $resultado;
+    }
+}
 ?>
