@@ -8,6 +8,7 @@ class Troca{
     private $estadoTroca;
     private $dataTroca;
     private $idTroca;
+    private $nomeUsuario;
 
     public function __construct($idUsuarioA, $idUsuarioB, $idJogoA, $idJogoB){
         $this->idUsuarioA = $idUsuarioA;
@@ -16,7 +17,8 @@ class Troca{
         $this->idJogoB = $idJogoB;
         $this->estadoTroca = NULL;
         $this->dataTroca = NULL;
-        $this->idTroca = NULL;    
+        $this->idTroca = NULL;
+        $this->nomeUsuario = $nomeUsuario;    
     }
 
     public function getIdUsuarioA(){

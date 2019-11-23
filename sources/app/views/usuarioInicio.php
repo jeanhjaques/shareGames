@@ -51,7 +51,7 @@ if(isset($_SESSION['jogoCadastradoSucesso'])){
 				<?php foreach($_SESSION['jogosLoja'] as $jogo){
 					if($_SESSION['idUsuario']!= $jogo['idUsuario']){
 						echo "<ul><figure><img class = \"img-capa\" src=\"../../public/upload/".$jogo['capa']."\">
-						<figcaption><h3>".$jogo['nome']."</h3>
+						<figcaption><h3>".$jogo['nome_jogo']."</h3>
 						<br>Cidade: Indefinida
 						<br>Categoria: ".$jogo['categoria']."
 						<br>Estado de uso: ".$jogo['anosUso']." anos
@@ -68,7 +68,7 @@ if(isset($_SESSION['jogoCadastradoSucesso'])){
 			<form method='post' action="../controllers/solicitacaoController.php">
 				<h2>Escolha um jogo para oferecer</h2>
 				<?php foreach($_SESSION['jogosUsuarioLogado'] as $jogo){
-					echo "<input type=\"radio\" id = \"idJogoProposta\" required=\"required\" name=\"idJogoProposta\" value=\"".$jogo['idJogo']."\">".$jogo['nome']."<br>";
+					echo "<input type=\"radio\" id = \"idJogoProposta\" required=\"required\" name=\"idJogoProposta\" value=\"".$jogo['idJogo']."\">".$jogo['nome_jogo']."<br>";
 				}
 				?>
 				<br>
@@ -133,8 +133,8 @@ if(isset($_SESSION['jogoCadastradoSucesso'])){
 						}
 						else{
 							foreach($_SESSION['trocas'] as $troca){
-								if($_SESSION['idUsuario'] != $troca['idUsuarioA']){
-									echo "<p>O Usario ID = ".$troca['idUsuarioA']." deseja trocar o jogo ID = ".$troca['idJogoB']." pelo jogo ID = ".$troca['idJogoA']." com você!
+								if($_SESSION['idUsuario'] != $troca['idUsuarioB']){
+									echo "<p>O Usuário ID = ".$troca['nome']." deseja trocar o jogo = ".$troca['nome_jogo']." pelo jogo = ".$troca['nome_jogo']." com você!
 									<button>Aceitar</button></p>";
 								}
 							}

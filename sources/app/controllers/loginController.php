@@ -48,7 +48,7 @@ if((isset($_POST['email_login'])) && (isset($_POST['senha_login']))){
     $_SESSION['jogosLoja'] = $jogoDAO->read();
     $trocaDAO = new TrocaDAO();
     $_SESSION['trocas'] = array();
-    $_SESSION['trocas'] = $trocaDAO->read();
+    $_SESSION['trocas'] = $trocaDAO->nomeUsuario($_SESSION['idUsuario']);
   }
   else{
     $_SESSION['loginErro'] = "<h1>Acesso Negado</h1>";

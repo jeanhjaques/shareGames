@@ -28,38 +28,55 @@ class TrocaDAO{
         $stmt->execute();
 
         if($stmt->rowCount()>0){
-                $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC); //retorna um array com todos os registros
-                return $resultado;
-            }
-            else{
-                 return []; // retorna um array vazio caso não tenha nenhum item
-             }
-         }
-
-         public function update(Troca $troca){
-            $sql = 'UPDATE troca SET idUsuarioA = ? , idUsuarioB = ? , idJogoA = ?, idJogoB = ?, estado = ?, dataTroca = ? WHERE idTroca = ?';
-
-            $stmt = Conexao::getConnect()->prepare($sql);
-
-            $stmt->bindValue(1, $troca->getIdUsuarioA());
-            $stmt->bindValue(2, $troca->getIdUsuarioB());
-            $stmt->bindValue(3, $troca->getIdJogoA());
-            $stmt->bindValue(4, $troca->getIdJogoB());
-            $stmt->bindValue(3, $troca->getEstado());
-            $stmt->bindValue(4, $troca->getDataTroca());
-            $stmt->bindValue(5, $troca->getIdTroca());
-
-            $stmt->execute();
+            $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC); //retorna um array com todos os registros
+            return $resultado;
         }
-
-        public function delete($idTroca){
-            $sql = 'DELETE FROM troca WHERE idTroca = ?';
-
-            $stmt = Conexao::getConnect()->prepare($sql);
-
-            $stmt->bindValue(1, $idTroca);
-
-            $stmt->execute();
+        else{
+            return []; // retorna um array vazio caso não tenha nenhum item
         }
     }
-    ?>
+
+    public function nomeUsuario($idUsuario){
+        $sql = 'SELECT idUsuarioA, idUsuarioB, a.nome as nomeUsuarioA, b.nome as nomeUsuarioB, ja.nome as nomeJogoA, jb.nome as nomeJogoB, estado, troca FROM troca as t JOIN 
+        usuario as a ON t.idUsuarioA = a.idUsuario JOIN usuario as b ON t.idUsuarioB = b.idUsuario JOIN 
+        jogo as ja ON t.idJogoA = ja.idJogo JOIN jogo as jb ON t.idJogoB = jb.idJogo'; //aqui retorna o nome do usuario q esta logado
+        $stmt = Conexao::getConnect()->prepare($sql);
+        $stmt->bindValue(1, $idUsuarioA);
+        $stmt->execute();
+
+        if($stmt->rowCount()>0){
+            $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return $resultado;
+        }
+        else{
+            return [];
+        }
+    }
+
+    public function update(Troca $troca){
+        $sql = 'UPDATE troca SET idUsuarioA = ? , idUsuarioB = ? , idJogoA = ?, idJogoB = ?, estado = ?, dataTroca = ? WHERE idTroca = ?';
+
+        $stmt = Conexao::getConnect()->prepare($sql);
+
+        $stmt->bindValue(1, $troca->getIdUsuarioA());
+        $stmt->bindValue(2, $troca->getIdUsuarioB());
+        $stmt->bindValue(3, $troca->getIdJogoA());
+        $stmt->bindValue(4, $troca->getIdJogoB());
+        $stmt->bindValue(3, $troca->getEstado());
+        $stmt->bindValue(4, $troca->getDataTroca());
+        $stmt->bindValue(5, $troca->getIdTroca());
+
+        $stmt->execute();
+    }
+
+    public function delete($idTroca){
+        $sql = 'DELETE FROM troca WHERE idTroca = ?';
+
+        $stmt = Conexao::getConnect()->prepare($sql);
+
+        $stmt->bindValue(1, $idTroca);
+
+        $stmt->execute();
+    }
+}
+?>
