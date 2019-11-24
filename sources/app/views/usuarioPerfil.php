@@ -22,7 +22,7 @@ session_start();
 					</ul> 
 				</li> 
 			</ul>
-			<img class="img-perfil" src="../../public/userpadrao.jpg" alt="foto do perfil">
+			<img class="img-perfil" src="../../public/userpadrao.png" alt="foto do perfil">
 		</nav>
 	</header>
 

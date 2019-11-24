@@ -241,17 +241,17 @@ footer button:hover{
 }
 
 @media only screen and (max-device-width: 1200px) {
-	header{
-		background-position-x: 2px;
-        background-size: 100px;
+header{
+	background-position-x: 2px;
+    background-size: 100px;
     }
-    header nav ul li a{ 
-      font-size: 20px;
-      margin: 0;
-      padding: 0;
+header nav ul li a{ 
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
   }	
 
-  header nav{
+header nav{
     padding: 0;
     margin-right: 0;
 }
@@ -283,6 +283,9 @@ article h2{
 
 article .anuncio{
     margin-bottom: 1%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
 }
 
 article h2{
@@ -294,6 +297,8 @@ article h2{
 article .anuncio .example{
     width: 70%;
     float: none;
+    margin: 0;
+    padding: 0;
 }
 
 

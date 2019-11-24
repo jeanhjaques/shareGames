@@ -16,7 +16,7 @@ session_start();
 	<header>
 		<nav>
 			<ul> 
-				<li><a href="#login">Login</a></li> 
+				<li><a href="#login" onclick="mudarestado('login','cadastro');">Login</a></li> 
 				<li><a href="#cadastro" class="cadastre-se" onclick="mudarestado('login','cadastro');">Cadastre-se</a></li>
 			</ul>
 		</nav>
@@ -25,7 +25,7 @@ session_start();
 	<article>
 		<div class="anuncio">
 			<img class="example" src="../../public/logo1.png" alt="some text">
-			<h2>Troque experiências, troque aventuras! Uma nova forma de jogar algo novo</h2>
+			<h2>Troque experiências, troque aventuras! Uma nova forma de jogar!</h2>
 			<h2>Troque jogos</h2>
 		</div>
 

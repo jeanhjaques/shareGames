@@ -36,12 +36,13 @@ class TrocaDAO{
         }
     }
 
-    public function nomeUsuario($idUsuario){
-        $sql = 'SELECT idUsuarioA, idUsuarioB, a.nome as nomeUsuarioA, b.nome as nomeUsuarioB, ja.nome as nomeJogoA, jb.nome as nomeJogoB, estado, troca FROM troca as t JOIN 
-        usuario as a ON t.idUsuarioA = a.idUsuario JOIN usuario as b ON t.idUsuarioB = b.idUsuario JOIN 
-        jogo as ja ON t.idJogoA = ja.idJogo JOIN jogo as jb ON t.idJogoB = jb.idJogo'; //aqui retorna o nome do usuario q esta logado
+    public function readDetalhes(){
+        $sql = 'SELECT idUsuarioA, idUsuarioB, idJogoA, idJogoB, a.nome as nomeUsuarioA, b.nome as nomeUsuarioB, ja.nome as
+         nomeJogoA, jb.nome as nomeJogoB, t.estado, idtroca FROM
+         troca as t JOIN usuario as a ON t.idUsuarioA = a.idUsuario JOIN
+         usuario as b ON t.idUsuarioB = b.idUsuario JOIN jogo as ja ON t.idJogoA = ja.idJogo JOIN jogo as jb ON t.idJogoB = jb.idJogo'; 
         $stmt = Conexao::getConnect()->prepare($sql);
-        $stmt->bindValue(1, $idUsuarioA);
+
         $stmt->execute();
 
         if($stmt->rowCount()>0){

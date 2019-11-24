@@ -29,7 +29,7 @@ if(isset($_SESSION['jogoCadastradoSucesso'])){
 					</ul> 
 				</li> 
 			</ul>
-			<img class="img-perfil" src="../../public/userpadrao.jpg" alt="foto do perfil">
+			<img class="img-perfil" src="../../public/userpadrao.png" alt="foto do perfil">
 		</nav>
 	</header>
 	<article>
@@ -51,7 +51,7 @@ if(isset($_SESSION['jogoCadastradoSucesso'])){
 				<?php foreach($_SESSION['jogosLoja'] as $jogo){
 					if($_SESSION['idUsuario']!= $jogo['idUsuario']){
 						echo "<ul><figure><img class = \"img-capa\" src=\"../../public/upload/".$jogo['capa']."\">
-						<figcaption><h3>".$jogo['nome_jogo']."</h3>
+						<figcaption><h3>".$jogo['nome']."</h3>
 						<br>Cidade: Indefinida
 						<br>Categoria: ".$jogo['categoria']."
 						<br>Estado de uso: ".$jogo['anosUso']." anos
@@ -68,7 +68,7 @@ if(isset($_SESSION['jogoCadastradoSucesso'])){
 			<form method='post' action="../controllers/solicitacaoController.php">
 				<h2>Escolha um jogo para oferecer</h2>
 				<?php foreach($_SESSION['jogosUsuarioLogado'] as $jogo){
-					echo "<input type=\"radio\" id = \"idJogoProposta\" required=\"required\" name=\"idJogoProposta\" value=\"".$jogo['idJogo']."\">".$jogo['nome_jogo']."<br>";
+					echo "<input type=\"radio\" id = \"idJogoProposta\" required=\"required\" name=\"idJogoProposta\" value=\"".$jogo['idJogo']."\">".$jogo['nome']."<br>";
 				}
 				?>
 				<br>
@@ -124,8 +124,8 @@ if(isset($_SESSION['jogoCadastradoSucesso'])){
 						<?php 
 						$quantidadeTrocas = 0;
 						foreach($_SESSION['trocas'] as $troca){
-							if($_SESSION['idUsuario'] == $troca['idUsuarioB']){
-								$quantidadeTrocas= $quantidadeTrocas + 1;
+							if($_SESSION['idUsuario'] == $troca['idUsuarioA']){
+								$quantidadeTrocas = $quantidadeTrocas + 1;
 							}
 						}
 						if($quantidadeTrocas == 0){
@@ -133,9 +133,9 @@ if(isset($_SESSION['jogoCadastradoSucesso'])){
 						}
 						else{
 							foreach($_SESSION['trocas'] as $troca){
-								if($_SESSION['idUsuario'] != $troca['idUsuarioB']){
-									echo "<p>O Usuário ID = ".$troca['nome']." deseja trocar o jogo = ".$troca['nome_jogo']." pelo jogo = ".$troca['nome_jogo']." com você!
-									<button>Aceitar</button></p>";
+								if($_SESSION['idUsuario'] != $troca['idUsuarioA']){
+									echo "<p>O Usuário <strong>".$troca['nomeUsuarioA']."</strong> deseja trocar o jogo <strong>".$troca['nomeJogoA']."</strong> pelo jogo <strong>".$troca['nomeJogoB']."</strong> com você!
+									<button>Aceitar</button></p><br>";
 								}
 							}
 						}
