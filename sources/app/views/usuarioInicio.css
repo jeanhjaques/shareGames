@@ -11,7 +11,7 @@ header .img-perfil{
 	width: 40px;
 	border-radius: 100%;
 	box-shadow: 0px 0px 5px 1px;
-}	
+}
 header ul{
 	padding: 0;
 	margin: 0;
@@ -176,7 +176,7 @@ article  .btn-cadastro:focus{
 article .opcao-2 .btn-ocultar{
 	background-color: transparent;
 	font-size: 100%;
-	color: rgb(0, 77, 192);
+	color: white;
 	outline-style: none;
 	cursor: pointer;
 	border:none;
@@ -440,7 +440,7 @@ footer button:focus{
 		background-position-x: 2px;
 		background-size: 275px;
 	}
-	header nav ul li a{ 
+	header nav ul li a{
 		font-size: 40px;
 		margin: 5px;
 	}
@@ -453,7 +453,7 @@ footer button:focus{
 		padding-top: 5px;
 		width: 90px;
 		margin-right: 2px;
-	}	
+	}
 
 	header nav{
 		margin-right: 0;

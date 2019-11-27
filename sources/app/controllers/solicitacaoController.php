@@ -11,7 +11,7 @@ date_default_timezone_set('America/Manaus');
 
 require_once '../models/Troca.php';
 require_once '../models/TrocaDAO.php';
-require_once '../models/jogoDAO.php';
+require_once '../models/JogoDAO.php';
 
 $valido = false;
 
@@ -19,9 +19,9 @@ $valido = false;
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $valido = isset($_POST['idJogoDesejado'], $_POST['idJogoProposta']);
 }
-if($valido){ 
+if($valido){
   $idUsuarioA = $_SESSION['idUsuario'];
-  $idJogoA = $_POST['idJogoProposta']; 
+  $idJogoA = $_POST['idJogoProposta'];
   $idJogoB = $_POST['idJogoDesejado'];
   $idUsuarioB = NULL;
   echo 'cheguei aqui';

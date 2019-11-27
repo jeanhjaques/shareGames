@@ -19,15 +19,15 @@ if(isset($_SESSION['jogoCadastradoSucesso'])){
 <body>
 	<header>
 		<nav>
-			<ul> 
-				<li><span><?php echo $_SESSION['nome'];?></span></li> 
-				<li><a href="#">Configurações</a> 
-					<ul class ="sub-menu"> 
-						<li><a href="usuarioPerfil.php">Seu perfil</a></li> 
-						<li><a href="#">Ajuda</a></li> 
-						<li><a href="login.php">Sair</a></li>  
-					</ul> 
-				</li> 
+			<ul>
+				<li><span><?php echo $_SESSION['nome'];?></span></li>
+				<li><a href="#">Configurações</a>
+					<ul class ="sub-menu">
+						<li><a href="usuarioPerfil.php">Seu perfil</a></li>
+						<li><a href="#">Ajuda</a></li>
+						<li><a href="login.php">Sair</a></li>
+					</ul>
+				</li>
 			</ul>
 			<img class="img-perfil" src="../../public/userpadrao.png" alt="foto do perfil">
 		</nav>
@@ -37,8 +37,8 @@ if(isset($_SESSION['jogoCadastradoSucesso'])){
 		<button class="menu-principal" onclick="mudarCorButtonsMenu('menu-principal',1); exibirMenuPrincipal('opcao-2','opcao-1', 'opcao-3','opcao-4')">Biblioteca</button></ul>
 		<button class="menu-principal" onclick="mudarCorButtonsMenu('menu-principal',2); exibirMenuPrincipal('opcao-3','opcao-1', 'opcao-2','opcao-4')">Propostas de Troca</button></ul>
 		<button class="menu-principal" onclick="mudarCorButtonsMenu('menu-principal',3); exibirMenuPrincipal('opcao-4','opcao-1', 'opcao-2','opcao-3')">Conversas</button></ul>
-		<div class = "opcao-1"> 
-			<li class = "item-loja"> 
+		<div class = "opcao-1">
+			<li class = "item-loja">
 				<h2> Jogos Disponíveis </h2>
 				<div class="pesquisar-jogo">
 					<form method="post" action="../controllers/pesquisaJogosController.php">
@@ -61,7 +61,7 @@ if(isset($_SESSION['jogoCadastradoSucesso'])){
 					}
 				}
 				?>
-				
+
 			</li>
 		</div>
 		<div class="confirmar">
@@ -80,7 +80,7 @@ if(isset($_SESSION['jogoCadastradoSucesso'])){
 				</form>
 				<button onclick="mudarEstado('confirmar');">Cancelar</button>
 			</div>
-			<div class = "opcao-2" id ="opcao-2"> 
+			<div class = "opcao-2" id ="opcao-2">
 				<button onclick="mudarEstadoAndOcultBtn('cadastrar-jogo', 'btn-cadastro');" class="btn-cadastro">Cadastrar novo jogo</button>
 				<div class="cadastrar-jogo">
 					<form method="post" action="../controllers/cadastroJogoController.php" enctype="multipart/form-data">
@@ -104,7 +104,7 @@ if(isset($_SESSION['jogoCadastradoSucesso'])){
 						</form>
 						<button class="btn-ocultar" onclick="mudarEstadoAndExibeBtn('cadastrar-jogo', 'btn-cadastro');"><strong>Ocultar</strong></button>
 					</div>
-					<li class = "item-loja"> 
+					<li class = "item-loja">
 						<h2> Jogos Cadastrados na Sua Biblioteca</h2>
 						<?php foreach($_SESSION['jogosUsuarioLogado'] as $jogo){
 							echo "<ul><figure><img class = \"img-capa\" src=\"../../public/upload/".$jogo['capa']."\">
@@ -118,24 +118,28 @@ if(isset($_SESSION['jogoCadastradoSucesso'])){
 						?>
 					</li>
 				</div>
-				<div class = "opcao-3"> 
-					<li class = "item-loja"> 
+				<div class = "opcao-3">
+					<li class = "item-loja">
 						<h2> Propostas de Troca</h2>
-						<?php 
+						<?php
 						$quantidadeTrocas = 0;
 						foreach($_SESSION['trocas'] as $troca){
 							if($_SESSION['idUsuario'] == $troca['idUsuarioA']){
 								$quantidadeTrocas = $quantidadeTrocas + 1;
 							}
 						}
-						if($quantidadeTrocas == 0){
+						if($quantidadeTrocas < 0){
 							echo "<p>Você não possuí nenhuma proposta</p>";
 						}
 						else{
 							foreach($_SESSION['trocas'] as $troca){
 								if($_SESSION['idUsuario'] != $troca['idUsuarioA']){
-									echo "<p>O Usuário <strong>".$troca['nomeUsuarioA']."</strong> deseja trocar o jogo <strong>".$troca['nomeJogoA']."</strong> pelo jogo <strong>".$troca['nomeJogoB']."</strong> com você!
+									echo "<p>O usuário <strong>".$troca['nomeUsuarioA']."</strong> deseja trocar o jogo <strong>".$troca['nomeJogoA']."</strong> pelo jogo <strong>".$troca['nomeJogoB']."</strong> com você!
 									<button>Aceitar</button></p><br>";
+								}
+								else{
+									echo "<p>Você está trocando o jogo <strong>".$troca['nomeJogoA']."</strong> pelo jogo <strong>".$troca['nomeJogoB']."</strong> com o usuário <strong>".$troca['nomeUsuarioB']."</strong>
+									<button>Pendente</button></p><br>";
 								}
 							}
 						}
